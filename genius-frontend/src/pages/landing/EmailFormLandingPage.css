@@ -1,0 +1,23 @@
+.email-form {
+  border-radius: 3px;
+  border: 1px solid black;
+  height: 34px;
+  width: 12%;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-form {
+  height: 38px;
+}
+
+::placeholder {
+  position: relative;
+  font-size: 18px;
+  text-align: left;
+  top: 5%;
+  left: 5%;
+}
