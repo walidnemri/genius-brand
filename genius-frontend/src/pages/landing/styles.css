@@ -20,7 +20,18 @@
   }
   .text h1 {
     color:#C4C4C4;
-    margin: 20px
+    margin: 20px;
+    font-size: 2.2rem;
+    font-family: 'canterbury';
+    letter-spacing: .1rem;
+  }
+  .sphere {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
   }
   
   .brand {
@@ -31,15 +42,19 @@
     align-items: flex-end;
     justify-content: flex-end;
     z-index: 1;
+
   }
   .brand h1 {
     color:#C4C4C4;
-    margin: 40px
+    font-family: 'canterbury';
+    font-size: 2.5rem;
+    margin: 40px;
+    letter-spacing: .1rem;
   }
   .collection {
     position: absolute;
     width: 100px;
-    height: 40px;
+    height: 50px;
     background-color: var(--theme-color);
     margin-top: 100px;
     z-index: 1;
@@ -51,7 +66,7 @@
   
   .collection div {
     color: #C4C4C4;
-    font-size: 1.50rem;
+    font-size: 2rem;
     
   }
   .images{
