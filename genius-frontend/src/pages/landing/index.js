@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import image from '../../assets/img1.webp'
 import BlackSphere from "../../components/blackSphere";
 import './styles.css'
 
 const Landing = () => {
+	const [showImg1, setShowImg1] = useState(false)
 	console.log(image)
+
+	const showImage = (date) => {
+		
+	}
   return(
     <>
       <div className="container">
