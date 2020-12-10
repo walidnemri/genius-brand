@@ -1,4 +1,5 @@
 import Timer from "./Timer";
+import "./styles.css";
 
 const BlackSphere = () => {
   return (

@@ -1,4 +1,5 @@
-import BlackSphere from "../../components/BlackSphere";
+import BlackSphere from "../../components/blackSphere";
+
 const Landing = () => {
   return (
     <>

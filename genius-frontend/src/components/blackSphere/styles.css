@@ -1,0 +1,41 @@
+/* Black Sphere and Timer */
+.blacksphere_ball {
+  display: flex;
+  background: black;
+  margin: 0;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  background: radial-gradient(circle at 100px 100px, #3d3d3d, rgb(0, 0, 0));
+  justify-content: center;
+  align-items: center;
+}
+.blacksphere {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+
+.Timer_container {
+  display: flex;
+  justify-content: center;
+}
+
+.Timer_interval_container {
+  margin: 0 10px;
+}
+
+.Timer_digit_time {
+  color: #ffffff;
+  font-weight: bold;
+  font-family: ds-digital;
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Timer_unit {
+  color: white;
+  font-family: canterbury;
+}
