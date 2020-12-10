@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
 
-const Timer = () => {
+const Timer = ({ showImage, showImg1 }) => {
+  //console.log(new Date('2020-12-10T16:12:40'))
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear();
     const difference = +new Date(`${year}-12-24T11:25:00`) - +new Date();
     let timeLeft = {};
+   //console.log(new Date().getTime() < new Date(2020,11,10,16,36,0).getTime())
+    const date = new Date()
+    const timeDate = new Date(2020,11,10,16,57,0)
+    if (date.getTime() > timeDate.getTime() && !showImg1) {
+       showImage()
+    }
     //console.log(Math.floor((difference / 1000) % 60))
     if (difference > 0) {
       timeLeft = {

@@ -92,6 +92,12 @@
     height: 100%;
     backdrop-filter: blur(30px);
   }
+
+  .noblur{
+    width: 100%;
+    height: 100%; 
+    transition: all 2500ms ease;
+  }
   
   .img1 {
     height: 100%;
