@@ -1,9 +1,12 @@
 import React from "react";
 import "./EmailFormLandingPage.css";
+import db from "../../components/firebase";
 
 class EmailForm extends React.Component {
   constructor(props) {
     super(props);
+    this.onChange = this.onChange.bind(this);
+    this.submitForm = this.submitForm(this);
     this.state = {
       email: "",
     };
@@ -16,14 +19,18 @@ class EmailForm extends React.Component {
   };
 
   submitForm = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
   };
+
+  pushData() {
+    const mail = this.state.email;
+  }
 
   render() {
     return (
       <div className="form-box">
-        <h2>Don't miss anything?</h2>
-        <form onSubmit={this.submitForm}>
+        <h2 className="text-form">Don't miss anything?</h2>
+        <form onSubmit={this.submitForm} className="newsletter-form">
           <input
             type="email"
             id="email"
