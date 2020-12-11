@@ -1,10 +1,13 @@
-
-//import './App.css';
-import Landing from './pages/landing'
+import logo from "./logo.svg";
+import "./App.css";
+import Landing from "../src/pages/landing/Landing.js";
 
 function App() {
   return (
-    <Landing/>
+    <div className="App">
+      <div>genius brand</div>
+      <Landing />
+    </div>
   );
 }
 
