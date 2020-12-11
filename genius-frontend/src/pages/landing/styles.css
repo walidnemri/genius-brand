@@ -18,6 +18,18 @@
     flex-direction: column;
     z-index: 1;
   }
+  .form {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    height: 100vh;
+    align-items: flex-end;
+    /* //flex-direction: column; */
+    z-index: 1;
+    padding: 40px;
+    justify-content: center;
+    
+  }
   .text h1 {
     color:#C4C4C4;
     margin: 20px;
@@ -67,6 +79,7 @@
   .collection div {
     color: #C4C4C4;
     font-size: 2rem;
+    font-family: 'canterbury';
     
   }
   .images{

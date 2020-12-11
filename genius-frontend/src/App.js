@@ -1,13 +1,11 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Landing from "../src/pages/landing/Landing.js";
+import Landing from './pages/landing'
+import Email from './pages/landing/EmailFormLandingPage'
 
 function App() {
   return (
-    <div className="App">
-      <div>genius brand</div>
-      <Landing />
-    </div>
+    <>
+    <Landing/>
+    </>
   );
 }
 
