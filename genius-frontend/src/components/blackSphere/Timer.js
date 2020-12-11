@@ -8,7 +8,7 @@ const Timer = ({ showImage, showImg1 }) => {
     let timeLeft = {};
    //console.log(new Date().getTime() < new Date(2020,11,10,16,36,0).getTime())
     const date = new Date()
-    const timeDate = new Date(2020,11,11,13,12,0)
+    const timeDate = new Date(2020,11,11,14,16,0)
     if (date.getTime() > timeDate.getTime() && !showImg1) {
        showImage()
     } 
