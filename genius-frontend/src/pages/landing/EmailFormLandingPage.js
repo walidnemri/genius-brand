@@ -6,25 +6,23 @@ class EmailForm extends React.Component {
   constructor(props) {
     super(props);
     this.onChange = this.onChange.bind(this);
-    this.submitForm = this.submitForm(this);
+    this.submitForm = this.submitForm.bind(this);
     this.state = {
-      email: "",
+      email: [],
     };
+    console.log(this.state.email);
   }
 
   onChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
+    console.log(this.state);
   };
 
   submitForm = (e) => {
-    //e.preventDefault();
+    e.preventDefault();
   };
-
-  pushData() {
-    const mail = this.state.email;
-  }
 
   render() {
     return (
