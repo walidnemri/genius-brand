@@ -9,7 +9,7 @@ const Landing = () => {
 
 	const showImage = (date) => {
 		console.log('ok')
-		setShowImg1(true)
+		setShowImg1(true) 
 	}
   return(
     <>

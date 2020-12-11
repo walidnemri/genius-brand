@@ -8,10 +8,10 @@ const Timer = ({ showImage, showImg1 }) => {
     let timeLeft = {};
    //console.log(new Date().getTime() < new Date(2020,11,10,16,36,0).getTime())
     const date = new Date()
-    const timeDate = new Date(2020,11,10,16,57,0)
+    const timeDate = new Date(2020,11,11,9,41,0)
     if (date.getTime() > timeDate.getTime() && !showImg1) {
        showImage()
-    }
+    } 
     //console.log(Math.floor((difference / 1000) % 60))
     if (difference > 0) {
       timeLeft = {
