@@ -23,7 +23,7 @@ const Landing = () => {
 					<h1>genius brand</h1>
 				</div>
 				<div className="collection">
-					<div style={{fontFamily: "canterbury"}}>20</div>
+					<div>21</div>
 				</div>
 				<div className="images">
 					
