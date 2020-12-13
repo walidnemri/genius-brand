@@ -1,25 +1,26 @@
 @import "../../App.css";
 
+.form-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 10px;
+}
+
 .email-form {
   border-radius: 3px;
   border: 1px solid black;
   height: 40px;
-  width: 68%;
-}
-
-.form-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 11vh;
+  width: 230px;
 }
 
 .submit-form {
   height: 40px;
-  width: 30%;
-  background-color: #7d31c7;
+  width: 75px;
+  background-color: var(--theme-color);
   color: white;
   border: 1px solid black;
   border-radius: 3px;
@@ -35,14 +36,14 @@
 
 .text-form {
   font-family: "canterbury";
-  font-size: 2.2rem;
-  font-family: 'canterbury';
-  letter-spacing: .1rem;
-  color: #C4C4C4;
+  font-size: 3.5vh;
+  color: #c4c4c4;
+  margin-bottom: 20px;
 }
 
 .newsletter-form {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 20%;
 }
