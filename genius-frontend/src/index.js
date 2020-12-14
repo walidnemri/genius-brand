@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Firebase, { FirebaseContext } from "./components/firebase";
+import './fonts/Canterbury.ttf'
+import './fonts/DS-DIGI.ttf'
+import './fonts/DS-DIGIB.ttf'
 
 ReactDOM.render(
   <React.StrictMode>

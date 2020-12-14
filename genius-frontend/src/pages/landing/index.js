@@ -4,6 +4,7 @@ import BlackSphere from "../../components/blackSphere";
 import Email from "./EmailFormLandingPage.js"
 import './styles.css'
 
+
 const Landing = () => {
 	const [showImg1, setShowImg1] = useState(false)
 	//console.log(image)
@@ -16,7 +17,9 @@ const Landing = () => {
     <>
       <div className="container">
 				<div className="brand">
-					<h1>genius brand</h1>
+					<div style={{display:'flex'}}>
+						<h1>genius brand</h1>
+					</div>	
 				</div>
 				<div className="collection">
 					<div>21</div>
@@ -30,6 +33,7 @@ const Landing = () => {
 				</div>
 				<div className="background"></div>
 				<div className="text">
+					
 					<h1>we're comming soon</h1>
 					<h1>get notified when site goes live</h1>
 					<div className="sphere"><BlackSphere showImage={showImage} showImg1={showImg1}/></div>
