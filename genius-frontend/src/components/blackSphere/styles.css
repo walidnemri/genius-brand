@@ -39,6 +39,15 @@
   align-self: flex-start;
 }
 
+@media (max-width: 850px) and (orientation: landscape) {
+  .Timer_digit_time {
+    font-size: 4vh;
+  }
+  .Timer_interval_container {
+    margin: 3px;
+  }
+}
+
 @media (max-width: 480px) {
   .blacksphere_ball {
     width: 50vw;

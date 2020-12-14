@@ -97,6 +97,15 @@
     width: 50%;
   }
 }
+
+@media (max-width: 850px) and (orientation: landscape) {
+  .landing_brand {
+    font-size: 6vh;
+  }
+  .landing_image {
+    width: 25%;
+  }
+}
 @media (max-width: 480px) {
   .landing_brand {
     top: 0;
