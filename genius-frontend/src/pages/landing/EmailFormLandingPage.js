@@ -22,6 +22,10 @@ class EmailForm extends React.Component {
 
   submitForm = (e) => {
     e.preventDefault();
+    let newPostKey = firebase.database().ref().child("email").push().key;
+    var updates = {};
+    updates["/email/" + newPostKey] = { email: this.state.email };
+    firebase.database().ref().update(updates);
   };
 
   render() {
