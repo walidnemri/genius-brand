@@ -7,7 +7,7 @@ import "./fonts/DS-DIGI.ttf";
 import "./fonts/DS-DIGIB.ttf";
 import "./index.css";
 import firebaseConfig from "./firebaseConfig.js";
-import * as firebase from "firebase";
+import firebase from "firebase";
 
 firebase.initializeApp(firebaseConfig);
 console.log("smth");
