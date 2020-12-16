@@ -1,7 +1,17 @@
+@import url(//db.onlinewebfonts.com/c/45f5fadb3dbf0140e10b498c7cb030a6?family=Canterbury);
 
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "Canterbury";
+   src: url("//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.eot");
+   src: url("//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.svg#Canterbury") format("svg"); }
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
