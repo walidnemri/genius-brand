@@ -2,9 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Firebase, { FirebaseContext } from "./components/firebase";
+import "./fonts/Canterbury.ttf";
+import "./fonts/DS-DIGI.ttf";
+import "./fonts/DS-DIGIB.ttf";
+import "./index.css";
+import firebaseConfig from "./firebaseConfig.js";
+import * as firebase from "firebase";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+firebase.initializeApp(firebaseConfig);
+console.log("smth");
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
