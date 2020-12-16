@@ -2,13 +2,19 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Firebase, { FirebaseContext } from "./components/firebase";
+import "./fonts/Canterbury.ttf";
+import "./fonts/DS-DIGI.ttf";
+import "./fonts/DS-DIGIB.ttf";
+import "./index.css";
+import firebaseConfig from "./firebaseConfig.js";
+import * as firebase from "firebase";
+
+firebase.initializeApp(firebaseConfig);
+console.log("smth");
 
 ReactDOM.render(
   <React.StrictMode>
-    <FirebaseContext.Provider value={new Firebase()}>
-      <App />
-    </FirebaseContext.Provider>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

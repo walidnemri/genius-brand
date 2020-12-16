@@ -1,16 +1,5 @@
-:root{
-  --theme-color: #7D31C7;
-}
-@font-face {
-  font-family: "ds-digital";
-  src: local("ds-digital"), url("./fonts/DS-DIGI.ttf"), format("truetype");
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "canterbury";
-  src: local("canterbury"), url("./fonts/Canterbury.ttf"), format("truetype");
-  font-weight: normal;
+:root {
+  --theme-color: #7d31c7;
 }
 
 *,

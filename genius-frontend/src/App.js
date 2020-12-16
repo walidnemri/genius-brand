@@ -1,12 +1,14 @@
-import Landing from './pages/landing'
-import Email from './pages/landing/EmailFormLandingPage'
+import react from "react";
+import Landing from "./pages/landing";
 
-function App() {
-  return (
-    <>
-    <Landing/>
-    </>
-  );
+class App extends react.Component {
+  render() {
+    return (
+      <>
+        <Landing />
+      </>
+    );
+  }
 }
 
 export default App;

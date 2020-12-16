@@ -6,7 +6,7 @@
   border-radius: 50%;
   height: 400px;
   width: 400px;
-  background: radial-gradient(circle at 60px 60px, #141414, rgb(0, 0, 0)); 
+  background: radial-gradient(circle at 60px 60px, #141414, rgb(0, 0, 0));
   /* opacity: 0.99; */
   justify-content: center;
   align-items: center;
@@ -41,6 +41,4 @@
   color: white;
   font-family: canterbury;
   align-self: flex-start;
-  
-  
 }
