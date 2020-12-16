@@ -1,6 +1,6 @@
 import React from "react";
 import "./EmailFormLandingPage.css";
-import db from "../../components/firebase";
+import firebase from "firebase";
 
 class EmailForm extends React.Component {
   constructor(props) {
