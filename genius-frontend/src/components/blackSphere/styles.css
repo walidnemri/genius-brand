@@ -31,7 +31,7 @@
 
 .Timer_digit_time {
   color: var(--theme-color);
-  font-family: 'ds-digital';
+  font-family: 'DS-Digital';
   font-size: 50px;
 
   align-items: center;

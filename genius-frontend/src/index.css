@@ -1,4 +1,5 @@
 @import url(//db.onlinewebfonts.com/c/45f5fadb3dbf0140e10b498c7cb030a6?family=Canterbury);
+@import url(//db.onlinewebfonts.com/c/63f874d192fb3892d88d5e26f942b5e2?family=DS-Digital);
 
 * {
   box-sizing: border-box;
@@ -11,7 +12,18 @@
     url("//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.woff2") format("woff2"),
     url("//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.woff") format("woff"),
     url("//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.ttf") format("truetype"),
-    url("//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.svg#Canterbury") format("svg"); }
+    url("//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.svg#Canterbury") format("svg"); 
+  }
+
+    @font-face {
+      font-family: "DS-Digital"; 
+      src: url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.eot"); 
+      src: url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.eot?#iefix") format("embedded-opentype"), 
+      url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.woff2") format("woff2"), 
+      url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.woff") format("woff"), 
+      url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.ttf") format("truetype"), 
+      url("//db.onlinewebfonts.com/t/63f874d192fb3892d88d5e26f942b5e2.svg#DS-Digital") format("svg"); 
+    }
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
