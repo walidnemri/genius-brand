@@ -1,11 +1,11 @@
-import Landing from './pages/landing'
-import Email from './pages/landing/EmailFormLandingPage'
+import Landing from "./pages/landing";
+import Home from "./pages/home";
 
 function App() {
   return (
-    <>
-    <Landing/>
-    </>
+    <div className="App">
+      <Landing />
+    </div>
   );
 }
 
