@@ -1,4 +1,3 @@
-import Landing from "./pages/landing";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Shop from "./pages/e-shop";
@@ -17,7 +16,7 @@ function App() {
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/shop">
+        <Route path="/e-shop">
           <Shop />
         </Route>
         <Route path="/lookbook">

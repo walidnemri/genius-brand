@@ -63,7 +63,7 @@
   position: absolute;
   bottom: 10px;
   right: 20px;
-  color: var(--theme-color);
+  color: white;
   font-family: "canterbury";
   font-size: 5vh;
 }

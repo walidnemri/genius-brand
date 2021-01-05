@@ -6,7 +6,6 @@
   overflow: hidden;
 }
 .home_image_background {
-  background-image: url("../../assets/pictureviolet.jpg");
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -26,11 +25,22 @@
   padding-top: 20px;
   z-index: 100;
 }
-.home_brand::after {
-  transform: translate(10px, 10px);
-  color: blueviolet;
+.home_brand::before {
+  position: absolute;
+  z-index: -1;
+  content: "genuis brand";
+  color: #5a4ede;
+  transform: translate(-1%);
+  filter: blur(10px);
 }
-
+.home_brand::after {
+  position: absolute;
+  z-index: -1;
+  content: "genuis brand";
+  color: #eb00ff;
+  transform: translate(-99%);
+  filter: blur(10px);
+}
 .home_nav {
   position: absolute;
   width: 100%;
