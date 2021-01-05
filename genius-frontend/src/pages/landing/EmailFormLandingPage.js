@@ -1,6 +1,7 @@
 import React from "react";
 import "./EmailFormLandingPage.css";
 import firebase from "firebase";
+import Modal from "../../components/modalEmail/Modal.js";
 
 class EmailForm extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class EmailForm extends React.Component {
     this.submitForm = this.submitForm.bind(this);
     this.state = {
       email: [],
+      showModal: false,
     };
     console.log(this.state.email);
   }
@@ -20,12 +22,23 @@ class EmailForm extends React.Component {
     console.log(this.state);
   };
 
+  hideModal = () => {
+    this.setState({ showModal: false });
+    console.log(this.state.showModal);
+  };
+
   submitForm = (e) => {
     e.preventDefault();
     let newPostKey = firebase.database().ref().child("email").push().key;
     var updates = {};
     updates["/email/" + newPostKey] = { email: this.state.email };
     firebase.database().ref().update(updates);
+    if (this.state.email !== "") {
+      this.setState({ email: "", showModal: true });
+    } else {
+      this.setState({ showModal: false });
+    }
+    console.log(this.state.showModal);
   };
 
   render() {
@@ -44,6 +57,13 @@ class EmailForm extends React.Component {
           />
           <input type="submit" value="submit" className="submit-form" />
         </form>
+        <Modal show={this.state.showModal} handleClose={this.hideModal}>
+          <p>Thank you for sharing us your address !</p>
+          <p>
+            We will update you by email for future news and our next coming up
+            collections
+          </p>
+        </Modal>
       </div>
     );
   }
