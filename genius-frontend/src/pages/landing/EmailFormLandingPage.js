@@ -9,7 +9,7 @@ class EmailForm extends React.Component {
     this.onChange = this.onChange.bind(this);
     this.submitForm = this.submitForm.bind(this);
     this.state = {
-      email: [],
+      email: "",
       showModal: false,
     };
     console.log(this.state.email);
@@ -20,6 +20,7 @@ class EmailForm extends React.Component {
       [e.target.name]: e.target.value,
     });
     console.log(this.state);
+    console.log(this.state.showModal);
   };
 
   hideModal = () => {
@@ -33,10 +34,9 @@ class EmailForm extends React.Component {
     var updates = {};
     updates["/email/" + newPostKey] = { email: this.state.email };
     firebase.database().ref().update(updates);
-    if (this.state.email !== "" && this.state.showModal == false) {
+    console.log(this.state.showModal);
+    if (this.state.email !== "") {
       this.setState({ email: "", showModal: true });
-    } else {
-      this.setState({ showModal: false });
     }
     console.log(this.state.showModal);
   };
@@ -54,6 +54,7 @@ class EmailForm extends React.Component {
             value={this.state.email}
             placeholder="Email"
             className="email-form"
+            required
           />
           <input type="submit" value="submit" className="submit-form" />
         </form>
