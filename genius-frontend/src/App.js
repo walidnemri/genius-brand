@@ -1,12 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <di>genius brand</di>
-    </div>
-  );
+import React, { Component } from "react";
+import "./App.css";
+import Navbar from "./components/Navbar";
+class App extends Component {
+render() {
+      return (
+         <Navbar />
+);
+   }
 }
-
 export default App;
