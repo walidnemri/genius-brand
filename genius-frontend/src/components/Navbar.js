@@ -1,6 +1,6 @@
 import React, {Component} from 'react'; 
 import "./Navbar.css";
-import logo from '../logo.svg';
+import logo from './logo.svg';
 import profile from './profile.svg';
 import bag from './bag.svg';
 import loupe from './loupe.svg';

@@ -5,6 +5,9 @@
     align-items: center;
     padding: 30px 10px;
     font-family: "canterbury";
+    height: 55px ;
+    border-bottom: 1px solid #8C12AB;
+
    
 } 
 .menu-container{
@@ -12,18 +15,15 @@
     justify-content: space-between;
     align-items: center;
     width: 34%;
-    height: 50px;
     color: white;
-    top: 0;
-    left: 0;
-    font-size: 23px;
+    font-size: 30px;
     
 }
 
 .logo{
-    width: 109px;    
-    height: 100px;    
-    background-image: url(../logo.svg);
+    width: 48px;    
+    height: 45px;    
+    background-image: url(./logo.svg);
     background-size: cover;
     
 
@@ -34,6 +34,8 @@
     display: flex;
     background-color: transparent;
     border-bottom: 2px solid white;
+    margin-top: 10px;
+
   }
 .searchinput{
     background-color: transparent;
@@ -44,6 +46,7 @@
     margin-top: 17px;
     font-size: 16px;
     width: 150px;
+    margin-bottom:5px ;
 
 }
 .logosearch{
@@ -78,8 +81,5 @@
     justify-content: space-between;
     align-items: center;
     width: 320px;
-    height: 30px;
-    top: 0;
-    left: 0;
     color: white;
 }
