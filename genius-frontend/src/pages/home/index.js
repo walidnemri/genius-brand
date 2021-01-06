@@ -16,7 +16,7 @@ const Home = () => {
       <div className="home_container">
         <BckgImage hover={hover} click={click} bckgImage={changeBckg} />
         <div className="home_content_container">
-          <h1 className="home_brand">genuis brand</h1>
+          <h1 className="home_brand">genius brand</h1>
           <ul className="home_nav">
             {nav.map((e, i) => (
               <li

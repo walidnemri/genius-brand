@@ -42,18 +42,18 @@ const BckgImage = ({ hover, click, bckgImage, changeFilter, changeState }) => {
     }
   };
 
-  useEffect(() => {
-    if (bckgImage !== "default") {
-      filterControle.current.setAttribute("scale", "100");
-      setTimeout(function () {
-        filterControle.current.setAttribute("scale", "10");
-      }, 500);
-    }
-  }, [bckgImage]);
+  // useEffect(() => {
+  //   if (bckgImage !== "default") {
+  //     filterControle.current.setAttribute("scale", "100");
+  //     setTimeout(function () {
+  //       filterControle.current.setAttribute("scale", "10");
+  //     }, 500);
+  //   }
+  // }, [bckgImage]);
 
   return (
     <>
-      <svg className="home_animation">
+      {/* <svg className="home_animation">
         <filter id="hover_filter">
           <feTurbulence
             baseFrequency="0.0"
@@ -82,7 +82,7 @@ const BckgImage = ({ hover, click, bckgImage, changeFilter, changeState }) => {
             ref={filterControle}
           ></feDisplacementMap>
         </filter>
-      </svg>
+      </svg> */}
       <div
         className="home_image_background"
         style={animeBckg(hover, bckgImage)}
