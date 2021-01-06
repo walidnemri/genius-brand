@@ -1,0 +1,65 @@
+/* Black Sphere and Timer */
+.blacksphere_ball {
+  display: flex;
+  background: black;
+  border-radius: 50%;
+  height: 45vh;
+  width: 45vh;
+  background: radial-gradient(circle at 60px 60px, #141414, rgb(0, 0, 0));
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Timer_container {
+  display: flex;
+  justify-content: center;
+}
+
+.Timer_interval_container {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Timer_digit_time {
+  color: var(--theme-color);
+  font-family: "ds-digital";
+  font-size: 5vh;
+}
+
+.Timer_unit {
+  color: white;
+  font-size: 2.5vh;
+  font-family: "canterbury";
+  align-self: flex-start;
+}
+
+@media (max-width: 850px) and (orientation: landscape) {
+  .Timer_digit_time {
+    font-size: 4vh;
+  }
+  .Timer_interval_container {
+    margin: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blacksphere_ball {
+    width: 50vw;
+    height: 50vw;
+  }
+  .Timer_interval_container {
+    margin: 4px;
+  }
+  .Timer_digit_time {
+    font-size: 5vw;
+  }
+  .Timer_unit {
+    font-size: 2.5vw;
+  }
+}

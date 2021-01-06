@@ -1,0 +1,54 @@
+@import "../../App.css";
+
+.form-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 10px;
+}
+
+.email-form {
+  border-radius: 3px;
+  border: 1px solid black;
+  height: 40px;
+  width: 230px;
+}
+
+.submit-form {
+  height: 40px;
+  width: 75px;
+  background-color: var(--theme-color);
+  color: white;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+::placeholder {
+  position: relative;
+  font-size: 18px;
+  text-align: left;
+  top: 5%;
+  left: 5%;
+}
+
+.text-form {
+  font-family: "canterbury";
+  font-size: 3.5vh;
+  color: #c4c4c4;
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 60%;
+}
+@media (max-width: 850px) and (orientation: landscape) {
+  .text-form {
+    font-size: 5vh;
+  }
+}
