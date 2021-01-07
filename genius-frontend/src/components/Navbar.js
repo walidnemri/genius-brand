@@ -1,41 +1,41 @@
 import React, {Component} from 'react'; 
+import { withRouter } from "react-router-dom";
 import "./Navbar.css";
-import logo from './logo.svg';
-import profile from './profile.svg';
-import bag from './bag.svg';
-import loupe from './loupe.svg';
+
 
 class Navbar extends Component {
-    render() {
-        return (  
-            <nav className='nav-container'> 
-                <div className="menu-container">
-                <span><a><div className='logo'></div></a></span>
-                        <span><a >E-shop</a></span>
-                        <span><a>Lookbook</a></span>
-                        <span><a >News</a></span>
-                        <span><a >About</a></span>   
-                    
-                </div>
-                <div className="shop-menu-container">
 
+ handleClick=(e,url) => {
+     e.preventDefault();
+     this.props.history.push(url);
+ }
+ render() { 
+    return ( 
+        <nav className='nav-container'> 
+             <div className="menu-container">
+                <span><div className='logo'></div></span>
+                 <span onClick= {(event)=> this.handleClick(event,'/e-shop')}>E-shop</span>
+                 <span onClick= {(event)=> this.handleClick(event,'/lookbook')}>lookbook</span>
+                 <span onClick= {(event)=> this.handleClick(event,'/news')}>News</span>
+                 <span onClick= {(event)=> this.handleClick(event,'/about')}>About</span>    
+             </div>
+             <div className="shop-menu-container">
                      <span>
-                                <div className='search'>
-                                    <input type="text" placeholder="search" className='searchinput'/> 
-                                    <i className= 'logosearch'></i>
-                                </div>
+                            <div className='search'>
+                                <input type="text" placeholder="search" className='searchinput'/> 
+                                <i className= 'logosearch'></i>
+                            </div>
                     </span>
-                     <span ><a><div className = 'logostyle'></div> </a></span>
-                     <span ><a><div className = 'logobag'></div></a></span> 
+                    <span ><div className = 'logostyle'></div> </span>
+                    <span ><div className = 'logobag'></div></span> 
                     
                 </div>
-            </nav>
-           
-        )
+             </nav>    
+         )
     }
 }
 
 
 
 
-export default Navbar
+export default withRouter(Navbar);
