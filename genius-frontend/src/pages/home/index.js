@@ -9,7 +9,7 @@ const Home = () => {
   const [click, setClick] = useState(false);
   const [changeBckg, setChangeBckg] = useState("default");
 
-  const nav = ["lookbook", "e-shop", "news", "about"];
+  const nav = ["e-shop", "lookbook", "news", "about"];
 
   return (
     <>
