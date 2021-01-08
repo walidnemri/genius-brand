@@ -7,22 +7,21 @@ class Banner extends React.Component {
       <div className="container">
         <div className="scroll-left">
           <p className="text-scroll">
-            - <span id="genius"> genius brand </span> -{" "}
-            <span id="drop">new drop in 50j : 18h : 8m : 7s</span> -{" "}
             <span id="genius"> genius brand </span> -{" "}
             <span id="drop">new drop in 50j : 18h : 8m : 7s</span> -{" "}
             <span id="genius"> genius brand </span> -{" "}
             <span id="drop">new drop in 50j : 18h : 8m : 7s</span> -{" "}
-            <span id="genius"> genius brand </span> -
+            <span id="genius"> genius brand </span> -{" "}
+            <span id="drop">new drop in 50j : 18h : 8m : 7s</span> -{" "}
           </p>
           <p className="text-scroll2">
-            - <span id="genius"> genius brand </span> -{" "}
-            <span id="drop">new drop in 50j : 18h : 8m : 7s</span> -{" "}
-            <span id="genius"> genius brand </span> -{" "}
-            <span id="drop">new drop in 50j : 18h : 8m : 7s</span> -{" "}
-            <span id="genius"> genius brand </span> -{" "}
-            <span id="drop">new drop in 50j : 18h : 8m : 7s</span> -{" "}
             <span id="genius"> genius brand </span> -
+            <span id="drop">new drop in 50j : 18h : 8m : 7s</span> -{" "}
+            <span id="genius"> genius brand </span> -{" "}
+            <span id="drop">new drop in 50j : 18h : 8m : 7s</span> -{" "}
+            <span id="genius"> genius brand </span> -{" "}
+            <span id="drop">new drop in 50j : 18h : 8m : 7s</span> -{" "}
+            
           </p>
         </div>
       </div>

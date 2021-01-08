@@ -3,7 +3,6 @@ import About from "./pages/about";
 import Shop from "./pages/e-shop/E-shop";
 import Lookbook from "./pages/lookbook";
 import News from "./pages/news";
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -29,5 +28,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
