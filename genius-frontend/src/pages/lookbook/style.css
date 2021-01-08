@@ -1,0 +1,149 @@
+.lookbook_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.lookbook_right_section {
+  width: 40%;
+  position: relative;
+}
+.lookbook_image_selection {
+  position: absolute;
+  display: flex;
+  width: 220px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%, -50%);
+  margin-left: 10px;
+}
+.lookbook_image_selection_left {
+  height: 100%;
+  width: 100px;
+  margin-right: 5px;
+}
+.lookbook_image_selection_unique_card {
+  width: 100%;
+  height: 9vh;
+  margin-top: 5px;
+  background-size: cover;
+  background-position: center;
+}
+.lookbook_title_container {
+  position: absolute;
+  width: 40px;
+  right: 2vw;
+  height: 55vh;
+  top: 50%;
+  transform: translateY(-65%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.lookbook_title {
+  font-family: "canterbury";
+  font-size: 4.5vh;
+  transform: rotate(90deg);
+}
+.lookbook_title_ligne {
+  background-color: #7d31c7;
+  height: 25vh;
+  width: 3px;
+}
+.lookbook_left_section {
+  width: 60%;
+  position: relative;
+}
+.lookbook_image_back_filter {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.692);
+  width: 100%;
+  height: 100%;
+}
+.lookbook_image_back {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.lookbook_image_container {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 80%;
+}
+.lookbook_navbar {
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: absolute;
+  bottom: 4%;
+}
+.lookbook_navbar_name {
+  position: relative;
+  font-family: "canterbury";
+  text-decoration: none;
+  font-size: 3vh;
+  margin: 10px;
+}
+.lookbook_link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+.lookbook_swiper {
+  display: none;
+}
+.lookbook_logo_container {
+  position: absolute;
+  width: 30vh;
+  height: 26.3vh;
+  background-position: center;
+  background-size: cover;
+  bottom: -11vh;
+  right: -10vh;
+}
+.lookbook_navbar_animation::before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 7px;
+  background-color: #7d31c7;
+  content: "";
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: all 0.3s;
+}
+.lookbook_navbar_animation:hover:before {
+  opacity: 1;
+  transform: translateY(6px);
+}
+.lookbook_underline_static::before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 7px;
+  background-color: #7d31c7;
+  content: "";
+  transform: translateY(6px);
+  transition: all 0.3s;
+}
+@media (max-width: 1024px) {
+  .lookbook_image_selection {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media (max-width: 480px) {
+} ;

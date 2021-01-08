@@ -1,5 +1,5 @@
-:root{
-  --theme-color: #7D31C7;
+:root {
+  --theme-color: #7d31c7;
 }
 @font-face {
   font-family: "ds-digital";
@@ -23,4 +23,9 @@ body {
 .App {
   height: 100%;
   width: 100%;
+}
+
+.app {
+  height: 200vh;
+  width: 100vw;
 }
