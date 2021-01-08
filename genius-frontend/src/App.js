@@ -1,6 +1,6 @@
 import Home from "./pages/home";
 import About from "./pages/about";
-import Shop from "./pages/e-shop";
+import Shop from "./pages/e-shop/E-shop";
 import Lookbook from "./pages/lookbook";
 import News from "./pages/news";
 
