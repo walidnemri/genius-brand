@@ -25,13 +25,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 function Lookbook() {
   const [imageSelect, setImageSelect] = useState("default");
   const [isHover, setIsHover] = useState(true);
-  const dataImage1 = [lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8, lb9];
-  const dataImage2 = [lb10, lb11, lb12, lb13, lb14, lb15, lb16, lb17, lb18];
+  const dataImage1 = [lb1, lb2, lb3, lb4, lb5, lb6, lb8];
+  const dataImage2 = [lb7, lb8, lb9, lb10, lb11, lb12, lb15];
+  const dataImage3 = [lb13, lb14, lb15, lb16, lb17, lb18, lb5];
   const dateImageFull = dataImage1.concat(dataImage2);
   return (
     <>
       <div className="lookbook_container">
         <div className="lookbook_right_section">
+          <p className="lookbook_principal_title">lookbook</p>
           <div className="lookbook_image_selection">
             <div className="lookbook_image_selection_left">
               {dataImage1.map((e, i) => (
@@ -55,11 +57,17 @@ function Lookbook() {
                 ></div>
               ))}
             </div>
-          </div>
-          <div className="lookbook_title_container">
-            <p className="lookbook_title">20Spring</p>
-            <div className="lookbook_title_ligne"></div>
-            <p className="lookbook_title">Collection</p>
+            <div className="lookbook_image_selection_left">
+              {dataImage3.map((e, i) => (
+                <div
+                  key={i}
+                  className="lookbook_image_selection_unique_card"
+                  style={{ backgroundImage: `url(${e})` }}
+                  onMouseOver={() => setImageSelect(e)}
+                  onClick={() => setImageSelect(e)}
+                ></div>
+              ))}
+            </div>
           </div>
           <div
             className="lookbook_logo_container"
@@ -87,15 +95,15 @@ function Lookbook() {
           {/* <Swiper className="lookbook_swiper">
             {dateImageFull.map((e) => (
               <SwiperSlide className="lookbook_swiper_image_container">
-                <div
-                  className="lookbook_swiper_image"
-                  style={{
-                    backgroundImage: `url(${e})`,
-                  }}
-                ></div>
+              <div
+              className="lookbook_swiper_image"
+              style={{
+                backgroundImage: `url(${e})`,
+              }}
+              ></div>
               </SwiperSlide>
-            ))}
-          </Swiper> */}
+              ))}
+            </Swiper> */}
           <ul className="lookbook_navbar">
             <li className="lookbook_navbar_name">
               <Link
@@ -140,6 +148,11 @@ function Lookbook() {
               </Link>
             </li>
           </ul>
+          <div className="lookbook_title_container">
+            <p className="lookbook_title">20Spring</p>
+            <div className="lookbook_title_ligne"></div>
+            <p className="lookbook_title">Collection</p>
+          </div>
         </div>
       </div>
     </>
