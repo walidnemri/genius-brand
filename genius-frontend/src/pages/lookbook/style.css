@@ -164,7 +164,7 @@
   transform: translate(-99%);
   filter: blur(10px);
 }
-@media (max-width: 1024px) and (orientation: portrait) {
+@media (orientation: portrait) {
   .lookbook_container {
     flex-direction: column;
   }
@@ -196,7 +196,21 @@
     height: auto;
     margin: 0;
     flex-direction: row;
-    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+  .lookbook_image_selection::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+  }
+  .lookbook_image_selection::-webkit-scrollbar-thumb {
+    background-color: #7d31c7;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  .lookbook_image_selection::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgb(168, 168, 168);
   }
   .lookbook_image_selection_left {
     margin: 0;

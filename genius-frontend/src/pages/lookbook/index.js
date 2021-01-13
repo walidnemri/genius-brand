@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import lb1 from "../../assets/lookbook/lb1.jpg";
 import lb2 from "../../assets/lookbook/lb2.jpg";
 import lb3 from "../../assets/lookbook/lb3.jpg";
@@ -20,7 +20,6 @@ import lb18 from "../../assets/lookbook/lb18.jpg";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import "./style.css";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 function Lookbook() {
   const [imageSelect, setImageSelect] = useState("default");
@@ -29,6 +28,8 @@ function Lookbook() {
   const dataImage2 = [lb7, lb8, lb9, lb10, lb11, lb12, lb15];
   const dataImage3 = [lb13, lb14, lb15, lb16, lb17, lb18, lb5];
   const dateImageFull = dataImage1.concat(dataImage2);
+  const imageSelection = useRef();
+
   return (
     <>
       <div className="lookbook_container">
@@ -102,7 +103,7 @@ function Lookbook() {
         </div>
         <div className="lookbook_right_section">
           <p className="lookbook_principal_title">lookbook</p>
-          <div className="lookbook_image_selection">
+          <div className="lookbook_image_selection" ref={imageSelection}>
             <div className="lookbook_image_selection_left">
               {dataImage1.map((e, i) => (
                 <div
