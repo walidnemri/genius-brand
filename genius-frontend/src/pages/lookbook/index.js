@@ -32,48 +32,6 @@ function Lookbook() {
   return (
     <>
       <div className="lookbook_container">
-        <div className="lookbook_right_section">
-          <p className="lookbook_principal_title">lookbook</p>
-          <div className="lookbook_image_selection">
-            <div className="lookbook_image_selection_left">
-              {dataImage1.map((e, i) => (
-                <div
-                  key={i}
-                  className="lookbook_image_selection_unique_card"
-                  style={{ backgroundImage: `url(${e})` }}
-                  onMouseEnter={() => setImageSelect(e)}
-                  onClick={() => setImageSelect(e)}
-                ></div>
-              ))}
-            </div>
-            <div className="lookbook_image_selection_left">
-              {dataImage2.map((e, i) => (
-                <div
-                  key={i}
-                  className="lookbook_image_selection_unique_card"
-                  style={{ backgroundImage: `url(${e})` }}
-                  onMouseOver={() => setImageSelect(e)}
-                  onClick={() => setImageSelect(e)}
-                ></div>
-              ))}
-            </div>
-            <div className="lookbook_image_selection_left">
-              {dataImage3.map((e, i) => (
-                <div
-                  key={i}
-                  className="lookbook_image_selection_unique_card"
-                  style={{ backgroundImage: `url(${e})` }}
-                  onMouseOver={() => setImageSelect(e)}
-                  onClick={() => setImageSelect(e)}
-                ></div>
-              ))}
-            </div>
-          </div>
-          <div
-            className="lookbook_logo_container"
-            style={{ backgroundImage: `url(${logo})` }}
-          ></div>
-        </div>
         <div className="lookbook_left_section">
           <div className="lookbook_image_back_filter"></div>
           <div
@@ -92,18 +50,6 @@ function Lookbook() {
               })`,
             }}
           ></div>
-          {/* <Swiper className="lookbook_swiper">
-            {dateImageFull.map((e) => (
-              <SwiperSlide className="lookbook_swiper_image_container">
-              <div
-              className="lookbook_swiper_image"
-              style={{
-                backgroundImage: `url(${e})`,
-              }}
-              ></div>
-              </SwiperSlide>
-              ))}
-            </Swiper> */}
           <ul className="lookbook_navbar">
             <li className="lookbook_navbar_name">
               <Link
@@ -153,6 +99,48 @@ function Lookbook() {
             <div className="lookbook_title_ligne"></div>
             <p className="lookbook_title">Collection</p>
           </div>
+        </div>
+        <div className="lookbook_right_section">
+          <p className="lookbook_principal_title">lookbook</p>
+          <div className="lookbook_image_selection">
+            <div className="lookbook_image_selection_left">
+              {dataImage1.map((e, i) => (
+                <div
+                  key={i}
+                  className="lookbook_image_selection_unique_card"
+                  style={{ backgroundImage: `url(${e})` }}
+                  onMouseEnter={() => setImageSelect(e)}
+                  onClick={() => setImageSelect(e)}
+                ></div>
+              ))}
+            </div>
+            <div className="lookbook_image_selection_left">
+              {dataImage2.map((e, i) => (
+                <div
+                  key={i}
+                  className="lookbook_image_selection_unique_card"
+                  style={{ backgroundImage: `url(${e})` }}
+                  onMouseOver={() => setImageSelect(e)}
+                  onClick={() => setImageSelect(e)}
+                ></div>
+              ))}
+            </div>
+            <div className="lookbook_image_selection_left">
+              {dataImage3.map((e, i) => (
+                <div
+                  key={i}
+                  className="lookbook_image_selection_unique_card"
+                  style={{ backgroundImage: `url(${e})` }}
+                  onMouseOver={() => setImageSelect(e)}
+                  onClick={() => setImageSelect(e)}
+                ></div>
+              ))}
+            </div>
+          </div>
+          <div
+            className="lookbook_logo_container"
+            style={{ backgroundImage: `url(${logo})` }}
+          ></div>
         </div>
       </div>
     </>
