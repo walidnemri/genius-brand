@@ -1,5 +1,4 @@
 import "./styles.css";
-import "./glitchEffect.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import defaultImage from "../../assets/pictureviolet.jpg";
