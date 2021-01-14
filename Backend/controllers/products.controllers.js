@@ -22,7 +22,7 @@ const create = async (req, res, next) => {
 // get all Products
 const index = async (req, res, next) => {
     console.log("all product")
-    res.send({Product: await Product.findAll()})
+    res.send({product: await Product.findAll()})
 }
 
 // get on product by id
