@@ -20,14 +20,13 @@ import lb18 from "../../assets/lookbook/lb18.jpg";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import "./style.css";
-
 function Lookbook() {
   const [imageSelect, setImageSelect] = useState("default");
   const [isHover, setIsHover] = useState(true);
+  const [translate, setTranslate] = useState(0);
   const dataImage1 = [lb1, lb2, lb3, lb4, lb5, lb6, lb8];
   const dataImage2 = [lb7, lb8, lb9, lb10, lb11, lb12, lb15];
   const dataImage3 = [lb13, lb14, lb15, lb16, lb17, lb18, lb5];
-  const dateImageFull = dataImage1.concat(dataImage2);
   const imageSelection = useRef();
 
   return (
