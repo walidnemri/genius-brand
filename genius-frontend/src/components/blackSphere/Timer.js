@@ -6,12 +6,12 @@ const Timer = ({ showImage, showImg1 }) => {
     let year = new Date().getFullYear();
     const difference = +new Date(`${year}-12-24T11:25:00`) - +new Date();
     let timeLeft = {};
-   //console.log(new Date().getTime() < new Date(2020,11,10,16,36,0).getTime())
-    const date = new Date()
-    const timeDate = new Date(2020,11,11,10,17,0)
+    //console.log(new Date().getTime() < new Date(2020,11,10,16,36,0).getTime())
+    const date = new Date();
+    const timeDate = new Date(2020, 11, 11, 14, 10, 0);
     if (date.getTime() > timeDate.getTime() && !showImg1) {
-       showImage()
-    } 
+      showImage();
+    }
     //console.log(Math.floor((difference / 1000) % 60))
     if (difference > 0) {
       timeLeft = {
@@ -39,10 +39,14 @@ const Timer = ({ showImage, showImg1 }) => {
     // if (!timeLeft[interval]) {
     //   return;
     // }
-    console.log()
+    console.log();
     timerComponents.push(
       <div className="Timer_interval_container">
-        <span className="Timer_digit_time">{timeLeft[interval] < 10  && timeLeft[interval] > 0 ? '0':''}{timeLeft[interval] === 0 ? '00': timeLeft[interval]} {Object.keys(timeLeft).length - 1 === i ? '':':'}</span>
+        <span className="Timer_digit_time">
+          {timeLeft[interval] < 10 && timeLeft[interval] > 0 ? "0" : ""}
+          {timeLeft[interval] === 0 ? "00" : timeLeft[interval]}{" "}
+          {Object.keys(timeLeft).length - 1 === i ? "" : ":"}
+        </span>
         <span className="Timer_unit"> {interval} </span>
       </div>
     );
@@ -52,7 +56,7 @@ const Timer = ({ showImage, showImg1 }) => {
       {timerComponents.length ? (
         timerComponents
       ) : (
-        <span>Time to the drop!</span>
+        <span className="Timer_digit_time">Time to the drop!</span>
       )}
     </div>
   );

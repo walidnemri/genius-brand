@@ -1,0 +1,43 @@
+@import "../../App.css";
+
+.product-side {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 78%;
+  overflow: auto;
+}
+
+.categories-filter {
+  width: 22%;
+  border-right: 1px solid #8c12ab;
+}
+
+.shop {
+  display: flex;
+  justify-content: flex-start;
+  height: 96vh;
+  width: 100%;
+  border-top: 1px solid #8c12ab;
+  color: white;
+  background-color: #212121;
+}
+
+h2 {
+  font-family: "Canterbury";
+  letter-spacing: 0.13em;
+  font-weight: normal;
+  margin-left: 10%;
+  margin-top: 5%;
+  font-size: 5vh;
+}
+
+li {
+  margin-left: 23%;
+  list-style-type: none;
+  font-family: "Space Mono", monospace;
+}
+
+ul {
+  margin-bottom: 10%;
+}

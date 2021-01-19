@@ -1,5 +1,19 @@
 :root {
   --theme-color: #7d31c7;
+<<<<<<< HEAD
+=======
+}
+@font-face {
+  font-family: "ds-digital";
+  src: local("ds-digital"), url("./fonts/DS-DIGI.ttf"), format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "canterbury";
+  src: local("canterbury"), url("./fonts/Canterbury.ttf"), format("truetype");
+  font-weight: normal;
+>>>>>>> dab091d8475a732d99383bc3799f6b6d8f34096b
 }
 
 *,
@@ -12,4 +26,9 @@ body {
 .App {
   height: 100%;
   width: 100%;
+}
+
+.app {
+  height: 200vh;
+  width: 100vw;
 }

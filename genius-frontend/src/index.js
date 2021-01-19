@@ -5,7 +5,11 @@ import reportWebVitals from "./reportWebVitals";
 import "./fonts/Canterbury.ttf";
 import "./fonts/DS-DIGI.ttf";
 import "./fonts/DS-DIGIB.ttf";
+<<<<<<< HEAD
 import "./index.css";
+=======
+//import "./index.css";
+>>>>>>> dab091d8475a732d99383bc3799f6b6d8f34096b
 import firebaseConfig from "./firebaseConfig.js";
 import firebase from "firebase";
 
