@@ -1,5 +1,6 @@
 @import "../../App.css";
 
+<<<<<<< HEAD
 .landing_container {
   height: 100vh;
   position: relative;
@@ -96,6 +97,63 @@
     width: 50%;
   }
 }
+=======
+.App {
+    display: flex;
+    justify-content: center;
+  }
+  .container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+  }
+  .text {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+  }
+  .form {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    height: 100vh;
+    align-items: flex-end;
+    /* //flex-direction: column; */
+    z-index: 1;
+    padding: 40px;
+    justify-content: center;
+    
+  }
+  .text h1 {
+    display: flex;
+    color:#C4C4C4;
+    margin: 20px;
+    font-size: 2.2rem;
+    font-family: 'canterbury';
+    letter-spacing: .1rem;
+  }
+  .sphere {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .brand {
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: flex-end;
+    justify-content: flex-end;
+    z-index: 1;
+>>>>>>> 5e10d9474ca76958071ad72c49c2f47355b53c2e
 
 @media (max-width: 850px) and (orientation: landscape) {
   .landing_brand {
