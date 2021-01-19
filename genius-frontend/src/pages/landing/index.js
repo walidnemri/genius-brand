@@ -1,47 +1,46 @@
 import React, { useState } from "react";
 import image from "../../assets/img1.webp";
 import BlackSphere from "../../components/blackSphere";
-import Email from "./EmailFormLandingPage.js";
 import "./styles.css";
 
 const Landing = () => {
   const [showImg1, setShowImg1] = useState(false);
-  //console.log(image)
+  console.log(image);
 
-  const showImage = (date) => {
-    console.log("ok");
-    setShowImg1(true);
-  };
+  const showImage = (date) => {};
   return (
-    <div className="landing_container">
-      <div className="landing_container_opacity">
-        <div className="landing_container_images">
-          <div className="landing_image landing_img1">
-            <div className={showImg1 ? "landing_noblur" : "landing_blur"}></div>
-          </div>
-          <div className="landing_image landing_img2">
-            <div className="landing_blur"></div>
-          </div>
-          <div className="landing_image landing_img3">
-            <div className="landing_blur"></div>
-          </div>
-          <div className="landing_image landing_img4">
-            <div className="landing_blur"></div>
-          </div>
-        </div>
-        <div className="landing_title">
+    <>
+      <div className="container">
+        <div className="text">
           <h1>we're comming soon</h1>
           <h1>get notified when site goes live</h1>
+          <div className="sphere">
+            <BlackSphere />
+          </div>
         </div>
-        <div className="landing_opacity"></div>
+        <div className="brand">
+          <h1>genius brand</h1>
+        </div>
+        <div className="collection">
+          <div style={{ fontFamily: "canterbury" }}>20</div>
+        </div>
+        <div className="images">
+          <div className="image img1">
+            <div className="blur"></div>
+          </div>
+          <div className="image img2">
+            <div className="blur"></div>
+          </div>
+          <div className="image img3">
+            <div className="blur"></div>
+          </div>
+          <div className="image img4">
+            <div className="blur"></div>
+          </div>
+        </div>
+        <div className="background"></div>
       </div>
-      <h1 className="landing_brand">genius brand</h1>
-      <div className="landing_collection">
-        <p>21</p>
-      </div>
-      <BlackSphere showImage={showImage} showImg1={showImg1} />
-      <Email />
-    </div>
+    </>
   );
 };
 

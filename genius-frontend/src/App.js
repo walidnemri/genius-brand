@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-import react from "react";
-import Landing from "./pages/landing";
-
-class App extends react.Component {
-  render() {
-    return (
-      <>
-        <Landing />
-      </>
-    );
-  }
-=======
 import Home from "./pages/home";
 import About from "./pages/about";
 import Shop from "./pages/e-shop/E-shop";
@@ -40,6 +27,5 @@ function App() {
       </Switch>
     </Router>
   );
->>>>>>> dab091d8475a732d99383bc3799f6b6d8f34096b
 }
 export default App;

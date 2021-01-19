@@ -20,7 +20,6 @@ import lb18 from "../../assets/lookbook/lb18.jpg";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import "./style.css";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 function Lookbook() {
   const [imageSelect, setImageSelect] = useState("default");

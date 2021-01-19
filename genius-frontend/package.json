@@ -3,26 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "@react-firebase/database": "^0.3.11",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",
     "firebase": "7.19.1",
-=======
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.5.0",
-    "firebase": "^8.1.2",
-    "hover-effect": "^1.1.0",
-    "node-sass": "^5.0.0",
-    "normalize.css": "^8.0.1",
->>>>>>> dab091d8475a732d99383bc3799f6b6d8f34096b
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
-    "swiper": "^6.4.5",
     "three": "^0.99.0",
     "web-vitals": "^0.2.4"
   },
@@ -34,7 +24,8 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app"
+      "react-app",
+      "react-app/jest"
     ]
   },
   "browserslist": {
