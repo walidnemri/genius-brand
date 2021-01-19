@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import lb1 from "../../assets/lookbook/lb1.jpg";
 import lb2 from "../../assets/lookbook/lb2.jpg";
 import lb3 from "../../assets/lookbook/lb3.jpg";
@@ -20,51 +20,18 @@ import lb18 from "../../assets/lookbook/lb18.jpg";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import "./style.css";
-
 function Lookbook() {
   const [imageSelect, setImageSelect] = useState("default");
   const [isHover, setIsHover] = useState(true);
-  const dataImage1 = [lb1, lb2, lb3, lb4, lb5, lb6, lb7, lb8, lb9];
-  const dataImage2 = [lb10, lb11, lb12, lb13, lb14, lb15, lb16, lb17, lb18];
-  const dateImageFull = dataImage1.concat(dataImage2);
+  const [translate, setTranslate] = useState(0);
+  const dataImage1 = [lb1, lb2, lb3, lb4, lb5, lb6, lb8];
+  const dataImage2 = [lb7, lb8, lb9, lb10, lb11, lb12, lb15];
+  const dataImage3 = [lb13, lb14, lb15, lb16, lb17, lb18, lb5];
+  const imageSelection = useRef();
+
   return (
     <>
       <div className="lookbook_container">
-        <div className="lookbook_right_section">
-          <div className="lookbook_image_selection">
-            <div className="lookbook_image_selection_left">
-              {dataImage1.map((e, i) => (
-                <div
-                  key={i}
-                  className="lookbook_image_selection_unique_card"
-                  style={{ backgroundImage: `url(${e})` }}
-                  onMouseEnter={() => setImageSelect(e)}
-                  onClick={() => setImageSelect(e)}
-                ></div>
-              ))}
-            </div>
-            <div className="lookbook_image_selection_left">
-              {dataImage2.map((e, i) => (
-                <div
-                  key={i}
-                  className="lookbook_image_selection_unique_card"
-                  style={{ backgroundImage: `url(${e})` }}
-                  onMouseOver={() => setImageSelect(e)}
-                  onClick={() => setImageSelect(e)}
-                ></div>
-              ))}
-            </div>
-          </div>
-          <div className="lookbook_title_container">
-            <p className="lookbook_title">20Spring</p>
-            <div className="lookbook_title_ligne"></div>
-            <p className="lookbook_title">Collection</p>
-          </div>
-          <div
-            className="lookbook_logo_container"
-            style={{ backgroundImage: `url(${logo})` }}
-          ></div>
-        </div>
         <div className="lookbook_left_section">
           <div className="lookbook_image_back_filter"></div>
           <div
@@ -83,18 +50,6 @@ function Lookbook() {
               })`,
             }}
           ></div>
-          {/* <Swiper className="lookbook_swiper">
-            {dateImageFull.map((e) => (
-              <SwiperSlide className="lookbook_swiper_image_container">
-                <div
-                  className="lookbook_swiper_image"
-                  style={{
-                    backgroundImage: `url(${e})`,
-                  }}
-                ></div>
-              </SwiperSlide>
-            ))}
-          </Swiper> */}
           <ul className="lookbook_navbar">
             <li className="lookbook_navbar_name">
               <Link
@@ -139,6 +94,53 @@ function Lookbook() {
               </Link>
             </li>
           </ul>
+          <div className="lookbook_title_container">
+            <p className="lookbook_title">20Spring</p>
+            <div className="lookbook_title_ligne"></div>
+            <p className="lookbook_title">Collection</p>
+          </div>
+        </div>
+        <div className="lookbook_right_section">
+          <p className="lookbook_principal_title">lookbook</p>
+          <div className="lookbook_image_selection" ref={imageSelection}>
+            <div className="lookbook_image_selection_left">
+              {dataImage1.map((e, i) => (
+                <div
+                  key={i}
+                  className="lookbook_image_selection_unique_card"
+                  style={{ backgroundImage: `url(${e})` }}
+                  onMouseEnter={() => setImageSelect(e)}
+                  onClick={() => setImageSelect(e)}
+                ></div>
+              ))}
+            </div>
+            <div className="lookbook_image_selection_left">
+              {dataImage2.map((e, i) => (
+                <div
+                  key={i}
+                  className="lookbook_image_selection_unique_card"
+                  style={{ backgroundImage: `url(${e})` }}
+                  onMouseOver={() => setImageSelect(e)}
+                  onClick={() => setImageSelect(e)}
+                ></div>
+              ))}
+            </div>
+            <div className="lookbook_image_selection_left">
+              {dataImage3.map((e, i) => (
+                <div
+                  key={i}
+                  className="lookbook_image_selection_unique_card"
+                  style={{ backgroundImage: `url(${e})` }}
+                  onMouseOver={() => setImageSelect(e)}
+                  onClick={() => setImageSelect(e)}
+                ></div>
+              ))}
+            </div>
+          </div>
+          <div
+            className="lookbook_logo_container"
+            style={{ backgroundImage: `url(${logo})` }}
+          ></div>
         </div>
       </div>
     </>
