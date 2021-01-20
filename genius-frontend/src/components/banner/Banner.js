@@ -4,7 +4,7 @@ import "./styles.css";
 class Banner extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div className="bannerContainer">
         <div className="scroll-left">
           <p className="text-scroll">
             <span id="genius"> genius brand </span> -{" "}
