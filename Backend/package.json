@@ -10,13 +10,20 @@
   "author": "walid",
   "license": "ISC",
   "dependencies": {
+    "@admin-bro/express": "^3.1.0",
+    "@admin-bro/sequelize": "^1.1.2",
+    "admin-bro": "^3.3.1",
+    "bcrypt": "^5.0.0",
     "cars": "^1.1.6",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5",
-    "sequelize-cli": "^6.2.0"
+    "sequelize": "^6.4.0",
+    "sequelize-cli": "^6.2.0",
+    "tslib": "^2.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

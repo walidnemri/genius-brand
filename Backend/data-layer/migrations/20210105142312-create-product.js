@@ -17,16 +17,17 @@ module.exports = {
       price: {
         type: Sequelize.INTEGER
       },
-      category_id: {
-        type:Sequelize.INTEGER,
-        references: {
-          model: {tableName:'Categories'},
-          key: 'id'
-        },
-        onUpdate:'CASCADE',
-        onDelete:'SET NULL',
+      // category_id: {
+      //   type:Sequelize.INTEGER,
+      //   allowNull:true,
+      //   references: {
+      //     model: {tableName:'Categories'},
+      //     key: 'id'
+      //   },
+      //   onUpdate:'CASCADE',
+      //   onDelete:'SET NULL',
 
-      },
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
