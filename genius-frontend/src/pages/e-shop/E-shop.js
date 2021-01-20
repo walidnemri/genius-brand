@@ -7,6 +7,7 @@ import NavBar from "../../components/navbar/Navbar"
 
 class E_shop extends React.Component {
   render() {
+    console.log()
     return (
       <div>
         <Banner />
