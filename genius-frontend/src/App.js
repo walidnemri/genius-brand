@@ -3,6 +3,8 @@ import About from "./pages/about";
 import Shop from "./pages/e-shop";
 import Lookbook from "./pages/lookbook";
 import News from "./pages/news";
+import Product from "./pages/product";
+import Landing from "./pages/landing";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -24,6 +26,12 @@ function App() {
         </Route>
         <Route path="/news">
           <News />
+        </Route>
+        <Route path="/product">
+          <Product />
+        </Route>
+        <Route path="/landing">
+          <Landing />
         </Route>
       </Switch>
     </Router>
