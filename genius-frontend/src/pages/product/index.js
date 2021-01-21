@@ -7,6 +7,7 @@ import lb2 from "../../assets/lookbook/lb2.jpg";
 import lb3 from "../../assets/lookbook/lb3.jpg";
 import lb4 from "../../assets/lookbook/lb4.jpg";
 import lb5 from "../../assets/lookbook/lb5.jpg";
+import Navbar from "../../components/navbar";
 
 const product = {
   name: "black hoodie special edition",
@@ -54,135 +55,138 @@ const Product = () => {
     // });
   };
   return (
-    <div className="product">
-      <div className="picture_container">
-        <div
-          className="principal_picture"
-          style={{ backgroundImage: `url(${pictureSelect})` }}
-        ></div>
-        <ul className="picture_selection">
-          {pictureProduct.map((e, i) => (
-            <li
-              className={
-                pictureSelect === e
-                  ? "picture_selection_unique_hover picture_selection_unique"
-                  : "picture_selection_unique"
-              }
-              key={i}
-              style={{ backgroundImage: `url(${e})` }}
-              onClick={() => {
-                setPictureSelect(e);
-              }}
-            ></li>
-          ))}
-        </ul>
-      </div>
-      <div className="content-form_container">
-        <div className="content-form_position">
-          <div className="collection">COLLECTION 20 SPRING</div>
-          <div className="product_name">{name.toUpperCase()}</div>
-          <div className="product_price">{`€${price}`}</div>
-          <div className="product_description">{description}</div>
-          <form className="form_container" onSubmit={handleSubmit}>
-            <div className="under_form_container">
-              <div className="form_selector_container">
-                <label className="select_name" htmlFor="SizeSelector">
-                  SIZE:
-                </label>
-                <select
-                  className="select"
-                  id="SizeSelector"
-                  name="size"
-                  value={selectValue}
-                  onChange={handleChangeSelectValue}
-                >
-                  <option>Select Size</option>
-                  <option value="XS">XS</option>
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                </select>
-              </div>
-              <div className="input_container">
-                <label className="input_name" htmlFor="Quantity">
-                  QTY:
-                </label>
-                <div className="input_adj_container">
-                  <input
-                    className="input"
-                    id="Quantity"
-                    type="number"
-                    name="quantity"
-                    value={inputValue}
-                    onChange={handleChangeInputValue}
-                    min="1"
-                    max="100"
-                  ></input>
-                  <div className="value_adj">
-                    <div
-                      onMouseOver={() => setIsHoverLess(true)}
-                      onMouseLeave={() => setIsHoverLess(false)}
-                      className="input_less_container"
-                      role="button"
-                      onClick={() =>
-                        setInputValue((prevValue) => {
-                          let parsed = parseInt(prevValue);
-                          if (parsed > 1) {
-                            parsed--;
-                          }
-                          return parsed.toString();
-                        })
-                      }
-                    >
+    <>
+      <Navbar />
+      <div className="product">
+        <div className="picture_container">
+          <div
+            className="principal_picture"
+            style={{ backgroundImage: `url(${pictureSelect})` }}
+          ></div>
+          <ul className="picture_selection">
+            {pictureProduct.map((e, i) => (
+              <li
+                className={
+                  pictureSelect === e
+                    ? "picture_selection_unique_hover picture_selection_unique"
+                    : "picture_selection_unique"
+                }
+                key={i}
+                style={{ backgroundImage: `url(${e})` }}
+                onClick={() => {
+                  setPictureSelect(e);
+                }}
+              ></li>
+            ))}
+          </ul>
+        </div>
+        <div className="content-form_container">
+          <div className="content-form_position">
+            <div className="collection">COLLECTION 20 SPRING</div>
+            <div className="product_name">{name.toUpperCase()}</div>
+            <div className="product_price">{`€${price}`}</div>
+            <div className="product_description">{description}</div>
+            <form className="form_container" onSubmit={handleSubmit}>
+              <div className="under_form_container">
+                <div className="form_selector_container">
+                  <label className="select_name" htmlFor="SizeSelector">
+                    SIZE:
+                  </label>
+                  <select
+                    className="select"
+                    id="SizeSelector"
+                    name="size"
+                    value={selectValue}
+                    onChange={handleChangeSelectValue}
+                  >
+                    <option>Select Size</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                  </select>
+                </div>
+                <div className="input_container">
+                  <label className="input_name" htmlFor="Quantity">
+                    QTY:
+                  </label>
+                  <div className="input_adj_container">
+                    <input
+                      className="input"
+                      id="Quantity"
+                      type="number"
+                      name="quantity"
+                      value={inputValue}
+                      onChange={handleChangeInputValue}
+                      min="1"
+                      max="100"
+                    ></input>
+                    <div className="value_adj">
                       <div
-                        className="input_less"
-                        style={{
-                          backgroundColor: isHoverLess ? "white" : "#7d31c7",
-                        }}
-                      ></div>
-                    </div>
-                    <div
-                      onMouseOver={() => setIsHoverPlus(true)}
-                      onMouseLeave={() => setIsHoverPlus(false)}
-                      className="input_plus_container"
-                      onClick={() =>
-                        setInputValue((prevValue) => {
-                          let parsed = parseInt(prevValue);
-                          if (parsed < 100) {
-                            parsed++;
-                          }
-                          return parsed.toString();
-                        })
-                      }
-                    >
+                        onMouseOver={() => setIsHoverLess(true)}
+                        onMouseLeave={() => setIsHoverLess(false)}
+                        className="input_less_container"
+                        role="button"
+                        onClick={() =>
+                          setInputValue((prevValue) => {
+                            let parsed = parseInt(prevValue);
+                            if (parsed > 1) {
+                              parsed--;
+                            }
+                            return parsed.toString();
+                          })
+                        }
+                      >
+                        <div
+                          className="input_less"
+                          style={{
+                            backgroundColor: isHoverLess ? "white" : "#7d31c7",
+                          }}
+                        ></div>
+                      </div>
                       <div
-                        className="input_plus_bar_1"
-                        style={{
-                          backgroundColor: isHoverPlus ? "white" : "#7d31c7",
-                        }}
-                      ></div>
-                      <div
-                        className="input_plus_bar_2"
-                        style={{
-                          backgroundColor: isHoverPlus ? "white" : "#7d31c7",
-                        }}
-                      ></div>
+                        onMouseOver={() => setIsHoverPlus(true)}
+                        onMouseLeave={() => setIsHoverPlus(false)}
+                        className="input_plus_container"
+                        onClick={() =>
+                          setInputValue((prevValue) => {
+                            let parsed = parseInt(prevValue);
+                            if (parsed < 100) {
+                              parsed++;
+                            }
+                            return parsed.toString();
+                          })
+                        }
+                      >
+                        <div
+                          className="input_plus_bar_1"
+                          style={{
+                            backgroundColor: isHoverPlus ? "white" : "#7d31c7",
+                          }}
+                        ></div>
+                        <div
+                          className="input_plus_bar_2"
+                          style={{
+                            backgroundColor: isHoverPlus ? "white" : "#7d31c7",
+                          }}
+                        ></div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <button className="button_submit" onClick={handleSubmit}>
-              {selectValue === "" || selectValue === "Select Size"
-                ? "CHOOSE SIZE"
-                : "ADD TO CART"}
-            </button>
-          </form>
+              <button className="button_submit" onClick={handleSubmit}>
+                {selectValue === "" || selectValue === "Select Size"
+                  ? "CHOOSE SIZE"
+                  : "ADD TO CART"}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
