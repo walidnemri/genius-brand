@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import lb1 from "../../assets/lookbook/lb1.jpg";
 import lb2 from "../../assets/lookbook/lb2.jpg";
 import lb3 from "../../assets/lookbook/lb3.jpg";

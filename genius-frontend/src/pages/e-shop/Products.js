@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 import Cards from "../../components/productCards/Cards.js";
-import shirt from "../../t-shirt.png";
+import shirt from "../../assets/t-shirt.png";
 
 const randomProducts = [
   {

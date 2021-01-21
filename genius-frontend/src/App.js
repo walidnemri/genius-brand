@@ -3,7 +3,9 @@ import About from "./pages/about";
 import Shop from "./pages/e-shop/E-shop";
 import Lookbook from "./pages/lookbook";
 import News from "./pages/news";
-import Admin from "./pages/admin"
+import Admin from "./pages/admin";
+import Product from "./pages/product";
+import Landing from "./pages/landing";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -13,25 +15,34 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
+
         <Route path="/about">
           <About />
         </Route>
+
         <Route path="/e-shop">
           <Shop />
         </Route>
+
         <Route path="/lookbook">
           <Lookbook />
         </Route>
+
         <Route path="/news">
           <News />
         </Route>
+
         <Route path="/admin">
           <Admin />
         </Route>
+        <Route path="/product">
+          <Product />
+        </Route>
+        <Route path="/landing">
+          <Landing />
+        </Route>
       </Switch>
     </Router>
-
-
-  )
+  );
 }
 export default App;

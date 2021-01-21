@@ -5,7 +5,6 @@ import reportWebVitals from "./reportWebVitals";
 import "./fonts/Canterbury.ttf";
 import "./fonts/DS-DIGI.ttf";
 import "./fonts/DS-DIGIB.ttf";
-//import "./index.css";
 import firebaseConfig from "./firebaseConfig.js";
 import firebase from "firebase";
 

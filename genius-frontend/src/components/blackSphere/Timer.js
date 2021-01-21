@@ -4,7 +4,7 @@ const Timer = ({ showImage, showImg1 }) => {
   //console.log(new Date('2020-12-10T16:12:40'))
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear();
-    const difference = +new Date(`${year}-12-24T11:25:00`) - +new Date();
+    const difference = +new Date(`${year}-04-24T11:25:00`) - +new Date();
     let timeLeft = {};
     //console.log(new Date().getTime() < new Date(2020,11,10,16,36,0).getTime())
     const date = new Date();
