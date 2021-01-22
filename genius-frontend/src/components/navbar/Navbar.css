@@ -69,6 +69,7 @@ ion-icon {
 }
 ion-icon:hover {
   color: #7d31c7;
+  cursor: pointer;
 }
 @media (max-width: 1270px) {
   .navbar_container {
@@ -87,6 +88,7 @@ ion-icon:hover {
     display: flex;
     align-items: center;
     margin-left: 2%;
+    cursor: pointer;
   }
   .navbar_menu {
     display: block;
