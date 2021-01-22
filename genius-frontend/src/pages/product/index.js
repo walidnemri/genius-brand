@@ -56,7 +56,7 @@ const Product = () => {
   };
   return (
     <>
-      <Navbar pageActive={"lookbook"} />
+      <Navbar pageActive={"e-shop"} />
       <div className="product">
         <div className="picture_container">
           <div

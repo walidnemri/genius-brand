@@ -133,6 +133,12 @@ ion-icon:hover {
     position: absolute;
     right: 2%;
   }
+  .navbar_link_active::before {
+    background-color: black;
+  }
+  .navbar_link:hover {
+    color: black;
+  }
   .navbar_icon_container {
     margin-left: 10%;
     margin-right: 10%;

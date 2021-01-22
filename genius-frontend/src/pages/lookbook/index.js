@@ -20,6 +20,8 @@ import lb18 from "../../assets/lookbook/lb18.jpg";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import "./style.css";
+import Navbar from "../../components/navbar";
+
 function Lookbook() {
   const [imageSelect, setImageSelect] = useState("default");
   const [isHover, setIsHover] = useState(true);
@@ -31,6 +33,7 @@ function Lookbook() {
 
   return (
     <>
+      <Navbar pageActive={"lookbook"} />
       <div className="lookbook_container">
         <div className="lookbook_left_section">
           <div className="lookbook_image_back_filter"></div>
@@ -50,7 +53,7 @@ function Lookbook() {
               })`,
             }}
           ></div>
-          <ul className="lookbook_navbar">
+          {/* <ul className="lookbook_navbar">
             <li className="lookbook_navbar_name">
               <Link
                 className="lookbook_link lookbook_navbar_animation"
@@ -93,7 +96,7 @@ function Lookbook() {
                 news
               </Link>
             </li>
-          </ul>
+          </ul> */}
           <div className="lookbook_title_container">
             <p className="lookbook_title">20Spring</p>
             <div className="lookbook_title_ligne"></div>
