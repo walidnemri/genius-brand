@@ -9,7 +9,7 @@ class E_shop extends React.Component {
   render() {
     return (
       <div>
-        <Banner />
+        {/* <Banner /> */}
         <NavBar pageActive="e-shop" />
         <div className="shop">
           <Categories />
