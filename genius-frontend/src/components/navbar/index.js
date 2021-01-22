@@ -7,7 +7,9 @@ function Navbar({ pageActive }) {
   const [inputValue, setInputValue] = useState("");
   const [menuIsClick, setMenuIsClick] = useState(false);
   return (
-    <div className="navbar_container">
+    <div
+      className={menuIsClick ? "navbar_container_active" : "navbar_container"}
+    >
       <div
         className="navbar_menu_container"
         onClick={() => {
