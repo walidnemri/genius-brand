@@ -105,13 +105,13 @@
   text-decoration: none;
   list-style-type: none;
   color: white;
-  font-family: "canterbury";
   font-size: 5vh;
 }
 .home_nav_ele {
   margin: 50px;
 }
 .home_link {
+  font-family: "Oswald", sans-serif;
   text-decoration: none;
   color: white;
   animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.2);
