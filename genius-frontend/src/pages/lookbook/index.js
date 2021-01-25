@@ -53,50 +53,6 @@ function Lookbook() {
               })`,
             }}
           ></div>
-          {/* <ul className="lookbook_navbar">
-            <li className="lookbook_navbar_name">
-              <Link
-                className="lookbook_link lookbook_navbar_animation"
-                to="/e-shop"
-                onMouseEnter={() => setIsHover(false)}
-                onMouseLeave={() => setIsHover(true)}
-              >
-                e-shop
-              </Link>
-            </li>
-            <li className="lookbook_navbar_name">
-              <Link
-                className={
-                  isHover
-                    ? "lookbook_link lookbook_underline_static"
-                    : "lookbook_link"
-                }
-                to="/lookbook"
-              >
-                lookbook
-              </Link>
-            </li>
-            <li className="lookbook_navbar_name">
-              <Link
-                className="lookbook_link lookbook_navbar_animation"
-                to="/about"
-                onMouseEnter={() => setIsHover(false)}
-                onMouseLeave={() => setIsHover(true)}
-              >
-                about
-              </Link>
-            </li>
-            <li className="lookbook_navbar_name">
-              <Link
-                className="lookbook_link lookbook_navbar_animation"
-                to="/news"
-                onMouseEnter={() => setIsHover(false)}
-                onMouseLeave={() => setIsHover(true)}
-              >
-                news
-              </Link>
-            </li>
-          </ul> */}
           <div className="lookbook_title_container">
             <p className="lookbook_title">20Spring</p>
             <div className="lookbook_title_ligne"></div>
@@ -112,7 +68,6 @@ function Lookbook() {
                   key={i}
                   className="lookbook_image_selection_unique_card"
                   style={{ backgroundImage: `url(${e})` }}
-                  onMouseEnter={() => setImageSelect(e)}
                   onClick={() => setImageSelect(e)}
                 ></div>
               ))}
@@ -123,7 +78,6 @@ function Lookbook() {
                   key={i}
                   className="lookbook_image_selection_unique_card"
                   style={{ backgroundImage: `url(${e})` }}
-                  onMouseOver={() => setImageSelect(e)}
                   onClick={() => setImageSelect(e)}
                 ></div>
               ))}
@@ -134,7 +88,6 @@ function Lookbook() {
                   key={i}
                   className="lookbook_image_selection_unique_card"
                   style={{ backgroundImage: `url(${e})` }}
-                  onMouseOver={() => setImageSelect(e)}
                   onClick={() => setImageSelect(e)}
                 ></div>
               ))}

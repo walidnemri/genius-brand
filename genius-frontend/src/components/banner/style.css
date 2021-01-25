@@ -1,0 +1,36 @@
+.container {
+  height: 40px !important;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  font-size: 27px;
+  font-family: "Oswald", sans-serif;
+  background-color: #7d31c7;
+  width: 100%;
+}
+.sliding {
+  white-space: nowrap;
+  animation: slides 50s infinite linear;
+}
+.sliding span {
+  margin-right: 0.6em;
+}
+.Timer_container {
+  height: 40px;
+  display: flex;
+  justify-content: start;
+}
+.Timer_interval_container {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 40px;
+}
+@keyframes slides {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}

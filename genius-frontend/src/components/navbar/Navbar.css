@@ -29,6 +29,7 @@
   margin-left: 2%;
   margin-bottom: 0;
   margin-top: 20px;
+  list-style: none;
 }
 .navbar_link_container {
   margin-left: 5%;
@@ -58,10 +59,15 @@
 .navbar_icons_container {
   display: flex;
   align-items: center;
-  margin-right: 3%;
+  margin-right: 2%;
   width: 20%;
   height: 60px;
   margin-bottom: 0;
+  list-style: none;
+}
+.navbar_icon_container {
+  margin-left: 5%;
+  margin-right: 5%;
 }
 ion-icon {
   color: white;
@@ -117,6 +123,7 @@ ion-icon:hover {
   }
   .navbar_links_container {
     display: none;
+    list-style: none;
   }
   .navbar_links_container_open {
     display: block;
@@ -130,6 +137,7 @@ ion-icon:hover {
     justify-content: center;
     align-items: center;
     order: 1;
+    list-style: none;
   }
   .navbar_icons_container {
     position: absolute;

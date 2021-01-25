@@ -9,9 +9,11 @@ const Timer = ({ showImage, showImg1 }) => {
     //console.log(new Date().getTime() < new Date(2020,11,10,16,36,0).getTime())
     const date = new Date();
     const timeDate = new Date(2020, 11, 11, 14, 10, 0);
+
     if (date.getTime() > timeDate.getTime() && !showImg1) {
       showImage();
     }
+
     //console.log(Math.floor((difference / 1000) % 60))
     if (difference > 0) {
       timeLeft = {
@@ -36,9 +38,6 @@ const Timer = ({ showImage, showImg1 }) => {
   const timerComponents = [];
 
   Object.keys(timeLeft).forEach((interval, i) => {
-    // if (!timeLeft[interval]) {
-    //   return;
-    // }
     console.log();
     timerComponents.push(
       <div className="Timer_interval_container">
