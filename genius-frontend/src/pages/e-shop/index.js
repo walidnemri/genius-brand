@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const Eshop = ({ products }) => {
   const [filter, setFilter] = useState();
+  const [isSelect, setIsSelect] = useState();
 
   return (
     <div>

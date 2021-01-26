@@ -9,8 +9,9 @@
   border-right: 1px solid #7d31c7;
   height: calc(100vh - 100px);
   overflow-y: hidden;
-  width: 15%;
+  width: 20%;
   box-shadow: #7d31c7 1px -1px 10px;
+  list-style: none;
 }
 .filter_container ul li p {
   font-family: "Oswald", sans-serif;
@@ -19,6 +20,7 @@
   text-decoration-color: #7d31c7;
   margin-left: 0.2em;
   margin-top: 5px;
+  list-style: none;
 }
 .filter_container ul li ul li button {
   background-color: black;
@@ -29,9 +31,13 @@
   outline: none;
   margin: 2px 0;
   margin-left: 1.3em;
+  padding: 0 10px;
+}
+.filter_container ul li ul li button:hover {
+  color: #7d31c7;
 }
 .product-container {
-  width: 85%;
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
 }

@@ -47,6 +47,15 @@
 .navbar_link:hover {
   color: #7d31c7;
 }
+.navbar_link:hover::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  left: 0;
+  bottom: -5px;
+  background-color: #7d31c7;
+}
 .navbar_link_active::before {
   content: "";
   position: absolute;
