@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Category.init({
+    id: { type: DataTypes.STRING, primaryKey: true, autoIncrement: true },
     name: DataTypes.STRING,
   }, {
     sequelize,
