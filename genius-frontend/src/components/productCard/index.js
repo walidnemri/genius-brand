@@ -2,8 +2,13 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./style.css";
 
-const ProductCard = ({ product, id }) => {
-  const { name, price, picture } = product;
+const picture = [
+  "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+  "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+];
+
+const ProductCard = ({ product }) => {
+  const { name, price, id } = product;
   console.log(name, price, picture);
   const [pictureChange, setPictureChange] = useState(0);
 

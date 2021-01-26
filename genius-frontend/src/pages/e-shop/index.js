@@ -2,9 +2,10 @@ import Navbar from "../../components/navbar";
 import Banner from "../../components/banner";
 import Card from "../../components/productCard";
 import "./styles.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-const product = [
+const productdata = [
   {
     name: "black hoodie special edition",
     price: 120,
@@ -167,11 +168,25 @@ const product = [
   },
 ];
 
-const Eshop = ({ products }) => {
+const Eshop = () => {
   const [filter, setFilter] = useState();
   const [isSelect, setIsSelect] = useState();
   const [isClick, setIsClick] = useState(false);
+  const [products, setProducts] = useState();
 
+  const getProducts = async () => {
+    let data;
+    try {
+      data = await axios.get("http://localhost:3002/api/products");
+    } catch (err) {
+      console.log(err);
+    }
+    if (data) setProducts(data.data.product);
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
   return (
     <div>
       <Banner style={{ position: "fixed" }} />
@@ -239,9 +254,10 @@ const Eshop = ({ products }) => {
           </ul>
         </div>
         <div className="product-container">
-          {product.map((e, i) => {
-            return <Card key={i} product={e} id={i} />;
-          })}
+          {products &&
+            products.map((e, i) => {
+              return <Card key={i} product={e} />;
+            })}
         </div>
       </div>
     </div>

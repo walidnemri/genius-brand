@@ -1,5 +1,7 @@
 import "./style.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import Navbar from "../../components/navbar";
 
 const product = {
@@ -18,6 +20,8 @@ const Product = () => {
   );
   const [isHoverLess, setIsHoverLess] = useState(false);
   const [isHoverPlus, setIsHoverPlus] = useState(false);
+  const [product, setProduct] = useState();
+  const { id } = useParams();
 
   const pictureProduct = [
     "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
@@ -28,7 +32,20 @@ const Product = () => {
   ];
 
   const classProduct = [];
-  const { name, price, description, stock } = product;
+
+  const getProduct = async () => {
+    let data;
+    try {
+      data = await axios.get(`http://localhost:3002/api/products/${id}`);
+    } catch (err) {
+      console.log(err);
+    }
+    if (data) setProduct(data.data.product);
+  };
+
+  useEffect(() => {
+    getProduct();
+  }, []);
 
   const handleChangeSelectValue = (e) => {
     setSelectValue(e.target.value);
@@ -47,7 +64,7 @@ const Product = () => {
     //   console.log(res.data);
     // });
   };
-  return (
+  return product ? (
     <>
       <Navbar pageActive={"e-shop"} />
       <div className="product">
@@ -76,9 +93,12 @@ const Product = () => {
         <div className="content-form_container">
           <div className="content-form_position">
             <div className="collection">COLLECTION 20 SPRING</div>
-            <div className="product_name">{name.toUpperCase()}</div>
-            <div className="product_price">{`€${price}`}</div>
-            <div className="product_description">{description}</div>
+            <div className="product_name">{product.name.toUpperCase()}</div>
+            <div className="product_price">{`€${product.price}`}</div>
+            <div className="product_description">
+              Long sleeves black denim jacket with a twisted design. Contrast
+              stitching. Button up closure. White arrow prints on the back.
+            </div>
             <form className="form_container" onSubmit={handleSubmit}>
               <div className="under_form_container">
                 <div className="form_selector_container">
@@ -180,6 +200,8 @@ const Product = () => {
         </div>
       </div>
     </>
+  ) : (
+    <div> nothing</div>
   );
 };
 
