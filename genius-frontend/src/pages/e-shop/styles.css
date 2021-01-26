@@ -10,7 +10,6 @@
   height: calc(100vh - 100px);
   overflow-y: hidden;
   width: 20%;
-  box-shadow: #7d31c7 1px -1px 10px;
   list-style: none;
 }
 .filter_container ul li p {
@@ -37,7 +36,20 @@
   color: #7d31c7;
 }
 .product-container {
-  width: 80%;
+  width: 80% !important;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.product-container::-webkit-scrollbar {
+  width: 5px;
+}
+.product-container::-webkit-scrollbar-track {
+  background-color: #290f42;
+}
+.product-container::-webkit-scrollbar-thumb {
+  width: 5px;
+  background-color: #7d31c7;
 }

@@ -1,12 +1,5 @@
 import "./style.css";
 import { useState } from "react";
-import axios from "axios";
-import arrow from "../../assets/arrow.png";
-import lb1 from "../../assets/lookbook/lb1.jpg";
-import lb2 from "../../assets/lookbook/lb2.jpg";
-import lb3 from "../../assets/lookbook/lb3.jpg";
-import lb4 from "../../assets/lookbook/lb4.jpg";
-import lb5 from "../../assets/lookbook/lb5.jpg";
 import Navbar from "../../components/navbar";
 
 const product = {
@@ -121,7 +114,7 @@ const Product = () => {
                       value={inputValue}
                       onChange={handleChangeInputValue}
                       min="1"
-                      max="100"
+                      max="10"
                     ></input>
                     <div className="value_adj">
                       <div

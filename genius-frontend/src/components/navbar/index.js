@@ -31,7 +31,7 @@ function Navbar({ pageActive }) {
                 ? "navbar_link_active navbar_link"
                 : "navbar_link"
             }
-            to="e-shop"
+            to="/e-shop"
           >
             e-shop
           </Link>
@@ -43,7 +43,7 @@ function Navbar({ pageActive }) {
                 ? "navbar_link_active navbar_link"
                 : "navbar_link"
             }
-            to="lookbook"
+            to="/lookbook"
           >
             lookbook
           </Link>
@@ -55,7 +55,7 @@ function Navbar({ pageActive }) {
                 ? "navbar_link_active navbar_link"
                 : "navbar_link"
             }
-            to="news"
+            to="/news"
           >
             news
           </Link>
@@ -67,7 +67,7 @@ function Navbar({ pageActive }) {
                 ? "navbar_link_active navbar_link"
                 : "navbar_link"
             }
-            to="about"
+            to="/about"
           >
             about
           </Link>

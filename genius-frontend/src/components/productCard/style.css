@@ -1,6 +1,26 @@
-.e-shop_container {
-  background-color: black;
+.product-card-container {
+  flex-basis: 25%;
+  display: flex;
+  text-decoration: none;
+  font-family: "Oswald", sans-serif;
+  color: white;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px 0;
 }
-
-.product-container {
+.picture-product {
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+.name {
+  font-size: 1.5em;
+}
+.name:hover {
+  text-decoration: underline;
+  text-decoration-color: #7d31c7;
+}
+.price {
+  font-size: 1.3em;
+  margin-top: 0.5em;
 }

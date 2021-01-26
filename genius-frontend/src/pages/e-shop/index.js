@@ -1,11 +1,176 @@
 import Navbar from "../../components/navbar";
 import Banner from "../../components/banner";
+import Card from "../../components/productCard";
 import "./styles.css";
 import { useState } from "react";
+
+const product = [
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+  {
+    name: "black hoodie special edition",
+    price: 120,
+    description:
+      "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
+    picture: [
+      "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+      "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    ],
+  },
+];
 
 const Eshop = ({ products }) => {
   const [filter, setFilter] = useState();
   const [isSelect, setIsSelect] = useState();
+  const [isClick, setIsClick] = useState(false);
 
   return (
     <div>
@@ -73,7 +238,11 @@ const Eshop = ({ products }) => {
             </li>
           </ul>
         </div>
-        <div className="product-container"></div>
+        <div className="product-container">
+          {product.map((e, i) => {
+            return <Card key={i} product={e} id={i} />;
+          })}
+        </div>
       </div>
     </div>
   );
