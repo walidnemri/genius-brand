@@ -1,0 +1,127 @@
+@import "../../App.css";
+
+.wrapper-body {
+  height: 220vh;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background: #212121;
+}
+
+.wrapper-body p {
+  color: white;
+  font-family: "Space Mono", monospace;
+}
+
+h1 {
+  font-family: "canterbury";
+  position: relative;
+  width: 100%;
+  top: 8%;
+  text-align: center;
+  font-size: 5rem;
+  letter-spacing: 0.3rem;
+  color: white;
+  text-shadow: 3px 0px 4px rgba(235, 0, 255, 0.7),
+    -3px 0px 4px rgba(90, 78, 222, 0.7);
+}
+
+.wrapper {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 13%;
+  background: #212121;
+}
+
+.outside-text {
+  line-height: 1.19;
+  text-align: justify;
+}
+
+.wrapper img {
+  max-height: 100vh;
+  height: 33vh;
+}
+
+.top {
+  display: flex;
+  margin-bottom: 0px;
+}
+
+.bottom {
+  display: flex;
+  margin: 0px;
+}
+
+/* top left */
+
+.top-left p {
+  position: relative;
+
+  text-align: justify;
+  height: 100%;
+  line-height: 1.19;
+}
+
+.top-left img {
+  float: right;
+  shape-outside: circle(100% at bottom right);
+  position: relative;
+  margin-left: 25px;
+}
+
+/* top right */
+
+.top-right p {
+  position: relative;
+
+  text-align: justify;
+  height: 100%;
+  line-height: 1.19;
+}
+
+.top-right img {
+  float: left;
+  shape-outside: circle(100% at bottom left);
+  position: relative;
+
+  margin-right: 25px;
+}
+
+/* bottom left */
+
+.bottom-left img {
+  float: right;
+  shape-outside: circle(100% at right top);
+  position: relative;
+
+  margin-left: 25px;
+}
+
+.bottom-left p {
+  position: relative;
+
+  text-align: justify;
+  height: 100%;
+  line-height: 1.19;
+}
+
+/* bottom right */
+
+.bottom-right img {
+  float: left;
+  shape-outside: circle(100% at left top);
+  position: relative;
+
+  margin-right: 25px;
+}
+
+.bottom-right p {
+  position: relative;
+
+  text-align: justify;
+  height: 100%;
+  line-height: 1.19;
+}

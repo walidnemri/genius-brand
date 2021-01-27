@@ -80,7 +80,7 @@
 .home_brand::before {
   position: absolute;
   z-index: -1;
-  content: "genuis brand";
+  content: "genius brand";
   color: #5a4ede;
   transform: translate(-1%);
   filter: blur(10px);
@@ -88,7 +88,7 @@
 .home_brand::after {
   position: absolute;
   z-index: -1;
-  content: "genuis brand";
+  content: "genius brand";
   color: #eb00ff;
   transform: translate(-99%);
   filter: blur(10px);

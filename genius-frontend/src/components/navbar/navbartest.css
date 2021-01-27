@@ -5,6 +5,8 @@
   align-items: center;
   padding: 30px 10px;
   font-family: "canterbury";
+  height: 55px;
+  border-bottom: 1px solid #8c12ab;
   padding-left: 50px;
   padding-right: 50px;
 }
@@ -12,14 +14,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 45%;
+  width: 34%;
   color: white;
   font-size: 30px;
 }
 
 .logo {
-  width: 60px;
-  height: 57px;
+  width: 48px;
+  height: 45px;
   background-image: url(./logo.svg);
   background-size: cover;
 }
