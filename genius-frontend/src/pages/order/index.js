@@ -11,7 +11,7 @@ const Order = () => {
     address: "",
     city: "",
     zip: "",
-    shipping: "",
+    shipping: "normal",
     nameOnCard: "",
     creditCardNumber: "",
     expMonth: "",
