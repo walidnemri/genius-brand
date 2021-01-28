@@ -1,4 +1,7 @@
 import React from 'react'
+import "./styles.css"
+import tshirt from './tshirt.svg'
+//import {ReactComponent as tshirt} from './tshirt.svg'
 
 
 const products = [
@@ -60,34 +63,61 @@ const  Bag = () => {
     }
     return (
       <>
-      <div>Bag</div>
-      <ul>
+      <div className='bag_container'>  
+      <p className ='bag_title'>Bag</p>
+      <div className='bag_list_container'> <p> Product</p>
+            <p> Quantity</p>
+            <p>Price </p>     
+             </div>
+            
+      <ul className= 'bag_card_container'>
           {products.map( product =>
               (
-                <li>
-                    {product.name}
-                    <input
+                <li className='bag_card'>
+                    <img className='bag_card_item' src= {tshirt}/>
+                    <div className='bag_prodruct_name'><p className='bag_product'>{product.name}</p></div>
+                    <input className ='bag_card_quantity bag_card_item'
                         type="number"
                         value={state[product.name]}
+                        min='1' 
+                        max='10'
                         onChange={(e) =>
                             dispatch({
                               type: "fill_input",
                               fieldName: product.name,
-                              payload: e.currentTarget.value,
+                              payload: e.currentTarget.value, 
+                            
                             })
                         }
                     />
-                    {product.price}$
+                    <button className='bag_button bag_card_item'> Remove</button>
+                    <p className='bag_product_price'>{product.price}$</p>
                 </li>
+               
               )
             )
           }
+          
       </ul>
-      <div>
-        <div>subtotal {state.total}$</div>
-        <div>shipping {state.shipping}$</div>
-        <div>total {state.shipping + state.total}$</div>
+      <div className='bag_line'></div>
+      <div className ='bag_total_container'>
+        <div className= 'bag_total_title'>
+        <p >Subtotal</p>
+        <p >Shipping</p>
+        <div className='bag_line_total'></div>
+        <p >Total</p>
+        </div>
+        <div className='unit'>
+        <p>{state.total}$</p>
+        <p>{state.shipping}$</p>
+        <p>{state.shipping + state.total}$</p>
+        <button> Checkout</button>
+        </div>
+         {/*comment here*/}
       </div>
+      </div>
+     
+  
       </>
   )
 };

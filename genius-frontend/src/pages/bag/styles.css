@@ -1,0 +1,158 @@
+.bag_container{
+    background-color: black;
+    height: 100vh;
+}
+
+.bag_prodruct_name{
+    width: 25%;
+    text-align: center;
+}
+.bag_title{
+    justify-content: center;
+    display: flex;
+    font-size: 75px;
+    font-family: 'canterbury';
+    color: white;
+    padding-top: 28px;
+}
+.bag_list_container{
+    display: flex;
+    justify-content: space-between;
+    margin: 14px;
+    border-bottom: 1px solid rgba(183, 30, 197, 0.705);
+    line-height: 27px;
+    font-family: 'canterbury';
+    color: rgba(183, 30, 197, 0.705);
+    padding-top: 33px;
+    font-size: 30px;
+}
+.bag_card_container{
+   display: flex;
+    align-items: column;
+    line-height: 55px;
+    color: white;
+    flex-direction: column;
+    justify-content: space-between;
+
+    
+    width:100%
+}
+
+  
+.bag_product{
+    margin: 0;
+
+}
+
+.bag_card{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+.bag_card_quantity{
+
+    margin: 38px;
+    width:40px !important;
+    height: 26px;
+    background-color: black;
+    border:none;
+    color: white;
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.bag_card_quantity::-webkit-outer-spin-button,
+.bag_card_quantity::-webkit-inner-spin-button{
+    -webkit-appearance: none ;    margin: 0;
+    
+}
+.bag_card_quantity[type='number']{
+    -moz-appearance: 'textfield';
+}
+
+   
+
+.bag_card_item {
+width: 25% ;
+display: flex;
+align-items: center;
+
+
+
+}
+.bag_button{
+    margin: 45px;
+    outline: none;
+    color: rgba(183, 30, 197, 0.705);
+    font-family: 'Times New Roman', Times, serif;
+    width:40px !important;
+    height: 26px;
+    background: black;
+    border: 1px solid rgba(183, 30, 197, 0.705);
+    border-radius: 5px;
+    padding: -4px;
+    font-size: 11px;
+}
+.bag_product_price{
+    margin-right: 6%
+
+
+}
+.bag_line{
+    border-bottom: 1px solid rgba(183, 30, 197, 0.705);
+}
+.bag_total_container{
+    display: flex;
+    justify-content: flex-end;
+    color: violet;
+    padding-top: 36px;
+    margin: 45px;
+    font-size: 20px;
+}
+.bag_total_title{
+
+    line-height: 36px;
+}
+
+
+.unit{
+        color: white; 
+        line-height: 36px;
+    }      
+
+
+.unit p{
+    padding-bottom: 1em;
+}
+.bag_total_title p {
+    padding-bottom: 1em;
+}
+.bag_line_total{
+    width: 352px;
+    height: 1px;
+    background: rgba(183, 30, 197, 0.705);
+}
+
+
+h2 {
+    font-family: "Canterbury";
+    letter-spacing: 0.13em;
+    font-weight: normal;
+    margin-left: 10%;
+    margin-top: 5%;
+    font-size: 5vh;
+  }
+  
+  li {
+    
+    list-style-type: none;
+    font-family: "Space Mono", monospace;
+  }
+  
+  ul {
+    margin-bottom: 10%;
+  }
+  
+
+
