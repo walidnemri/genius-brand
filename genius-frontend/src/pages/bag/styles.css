@@ -93,6 +93,8 @@ align-items: center;
     border-radius: 5px;
     padding: -4px;
     font-size: 11px;
+    cursor: pointer;
+    
 }
 .bag_product_price{
     margin-right: 6%
@@ -132,6 +134,24 @@ align-items: center;
     width: 352px;
     height: 1px;
     background: rgba(183, 30, 197, 0.705);
+
+}
+.bag_checkout{
+    margin: 45px;
+    outline: none;
+    color: rgba(183, 30, 197, 0.705);
+    font-family: 'Times New Roman', Times, serif;
+    width:40px !important;
+    height: 26px;
+    background: black;
+    border: 1px solid rgba(183, 30, 197, 0.705);
+    border-radius: 5px;
+    padding: -4px;
+    font-size: 11px;
+    cursor: pointer;
+    
+
+
 }
 
 

@@ -111,9 +111,9 @@ const  Bag = () => {
         <p>{state.total}$</p>
         <p>{state.shipping}$</p>
         <p>{state.shipping + state.total}$</p>
-        <button> Checkout</button>
+        <button className='bag_checkout'> Checkout</button>
         </div>
-         {/*comment here*/}
+        
       </div>
       </div>
      
