@@ -1,0 +1,175 @@
+.order_container {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: black;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+}
+.order_bag_container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.order_form_container {
+  width: 60%;
+  min-width: 410px;
+  height: 100%;
+  overflow: auto;
+}
+.order_form_container::-webkit-scrollbar {
+  width: 5px;
+}
+.order_form_container::-webkit-scrollbar-track {
+  background-color: #290f42;
+}
+.order_form_container::-webkit-scrollbar-thumb {
+  width: 5px;
+  background-color: #7d31c7;
+}
+.order_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  text-decoration: underline;
+  text-decoration-color: #7d31c7;
+  margin-bottom: 0.3em;
+}
+.order_address {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+.order_address label {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.3em;
+}
+.order_address input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #7d31c7;
+  height: 40px;
+  width: 400px;
+  font-family: "Oswald", sans-serif;
+  font-size: 1em;
+  background-color: black;
+  margin-bottom: 1em;
+  color: white;
+}
+.order_address input::-webkit-outer-spin-button,
+.order_address input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.order_address input[type="text"] {
+  -moz-appearance: textfield;
+}
+.order_address input:-internal-autofill-selected {
+  background-color: black !important;
+  color: white !important;
+}
+.order_address input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0 1.3em black inset !important;
+  background-clip: content-box !important;
+}
+.order_address select {
+  margin-bottom: 1em;
+  border: none;
+  border-bottom: 1px solid #7d31c7;
+  background-color: black;
+  color: white;
+  outline: none;
+  font-family: "Oswald", sans-serif;
+  font-size: 1em;
+  width: 400px;
+  height: 40px;
+}
+.order_address select:active {
+  border: none;
+}
+.order_address select::-ms-expand {
+  display: none;
+}
+.order_address select:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0 1.3em black inset !important;
+  background-clip: content-box !important;
+}
+.order_shipping {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.3em;
+}
+.order_shipping ul {
+  list-style: none;
+}
+.order_shipping input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  border: 1px solid #7d31c7;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+
+  position: relative;
+  top: 4px;
+  outline: none;
+}
+input:checked {
+  border: 8px solid #7d31c7;
+}
+.order_payment {
+  width: 400px;
+}
+.order_payment label {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.3em;
+}
+.order_payment input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #7d31c7;
+  height: 40px;
+  width: 400px;
+  font-family: "Oswald", sans-serif;
+  font-size: 1em;
+  background-color: black;
+  margin-bottom: 1em;
+  color: white;
+}
+.order_payment input::-webkit-outer-spin-button,
+.order_payment input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.order_payment input[type="text"] {
+  -moz-appearance: textfield;
+}
+.order_payment input:-internal-autofill-selected {
+  background-color: black !important;
+  color: white !important;
+}
+.order_payments input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0 1.3em black inset !important;
+  background-clip: content-box !important;
+}
