@@ -1,8 +1,12 @@
 import "./style.css";
 import { useReducer } from "react";
 import Bag from "../../components/bag_for_order";
+import { bagContext } from "../../Context";
+import { useState, useEffect, useContext } from "react";
 
 const Order = () => {
+  const { bagOrder, setBagOrder } = useContext(bagContext);
+
   const initialState = {
     firstName: "",
     lastName: "",
@@ -48,7 +52,7 @@ const Order = () => {
     <div className="order_container">
       <div className="order_bag_container">
         <h3>ORDER</h3>
-        {bag.map((e, i) => {
+        {bagOrder.map((e, i) => {
           return (
             <div key={i}>
               <img alt="product_picture" src="" />
