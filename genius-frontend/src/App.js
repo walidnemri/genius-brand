@@ -7,6 +7,7 @@ import Admin from "./pages/admin";
 import Product from "./pages/product";
 import Landing from "./pages/landing";
 import Order from "./pages/order";
+import Bag from "./pages/bag";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -35,6 +36,10 @@ function App() {
 
         <Route path="/admin">
           <Admin />
+        </Route>
+
+        <Route path="/bag">
+          <Bag />
         </Route>
 
         <Route path="/product/:id">

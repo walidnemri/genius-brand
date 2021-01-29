@@ -85,7 +85,9 @@ function Navbar({ pageActive }) {
           <ion-icon className="navbar-icon" name="person-outline"></ion-icon>
         </li>
         <li className="navbar_icon_container">
-          <ion-icon className="navbar-icon" name="bag-outline"></ion-icon>
+          <Link to="/bag">
+            <ion-icon className="navbar-icon" name="bag-outline"></ion-icon>
+          </Link>
         </li>
       </ul>
     </div>

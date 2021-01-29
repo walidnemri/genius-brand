@@ -17,6 +17,8 @@ const Order = () => {
     expMonth: "",
     expYear: "",
     cvv: "",
+    shippingPrice: 0,
+    totalOrder: 0,
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -69,6 +71,14 @@ const Order = () => {
             </div>
           );
         })}
+        <div>
+          <p>shipping:</p>
+          <p>{state.shippingPrice}</p>
+        </div>
+        <div>
+          <p>Total:</p>
+          <p>{state.totalOrder}</p>
+        </div>
       </div>
       <div className="order_form_container">
         <form className="order_form">
@@ -153,7 +163,7 @@ const Order = () => {
                     checked={state.shipping === "normal"}
                     onChange={handleTextChange}
                   ></input>
-                  Normal
+                  Normal (free)
                 </label>
               </li>
               <li>
@@ -166,19 +176,35 @@ const Order = () => {
                     checked={state.shipping === "express"}
                     onChange={handleTextChange}
                   ></input>
-                  Express
+                  Express (5$)
                 </label>
               </li>
             </ul>
           </div>
           <div className="order_payment">
             <h3>Payment</h3>
-            <label htmlFor="fname">Accepted Cards</label>
-            <div className="">
-              <i className="fa fa-cc-visa" style={{ color: "navy" }}></i>
-              <i className="fa fa-cc-amex" style={{ color: "blue" }}></i>
-              <i className="fa fa-cc-mastercard" style={{ color: "red" }}></i>
-              <i className="fa fa-cc-discover" style={{ color: "orange" }}></i>
+            <label htmlFor="fname">Accepted Cards:</label>
+            <div className="credit_card_container">
+              <i
+                className="fa fa-cc-visa"
+                style={{ color: "navy", fontSize: "3em" }}
+              ></i>
+              <i
+                className="fa fa-cc-amex"
+                style={{ color: "blue", fontSize: "3em", paddingLeft: "0.5em" }}
+              ></i>
+              <i
+                className="fa fa-cc-mastercard"
+                style={{ color: "red", fontSize: "3em", paddingLeft: "0.5em" }}
+              ></i>
+              <i
+                className="fa fa-cc-discover"
+                style={{
+                  color: "orange",
+                  fontSize: "3em",
+                  paddingLeft: "0.5em",
+                }}
+              ></i>
             </div>
             <label htmlFor="cname">Name on Card:</label>
             <input

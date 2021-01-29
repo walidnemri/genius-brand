@@ -60,6 +60,9 @@ const Product = () => {
       size: inputValue,
     };
     console.log(infoProduct);
+    selectValue === "" || selectValue === "Select Size"
+      ? window.alert("Please select a size")
+      : window.alert("product add in the bag");
     // axios.post("mettre l'url", infoProduct).then((res) => {
     //   console.log(res.data);
     // });

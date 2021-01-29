@@ -45,6 +45,8 @@ h3 {
   display: flex;
   flex-direction: column;
   width: 400px;
+  padding-bottom: 50px;
+  padding-top: 30px;
 }
 .order_address label {
   font-family: "Oswald", sans-serif;
@@ -111,6 +113,7 @@ h3 {
   width: 400px;
   font-family: "Oswald", sans-serif;
   font-size: 1.3em;
+  padding-bottom: 50px;
 }
 .order_shipping ul {
   list-style: none;
@@ -136,6 +139,7 @@ input:checked {
 }
 .order_payment {
   width: 400px;
+  padding-bottom: 200px;
 }
 .order_payment label {
   font-family: "Oswald", sans-serif;
@@ -172,4 +176,7 @@ input:checked {
   -webkit-text-fill-color: white !important;
   -webkit-box-shadow: 0 0 0 1.3em black inset !important;
   background-clip: content-box !important;
+}
+.credit_card_container {
+  padding-bottom: 20px;
 }
