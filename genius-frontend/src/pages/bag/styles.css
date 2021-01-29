@@ -20,6 +20,7 @@ body::-webkit-scrollbar-thumb {
   text-decoration: underline;
   text-decoration-color: #7d31c7;
   text-transform: uppercase;
+  padding-top: 0.5em;
 }
 .bag_list_container {
   display: flex;
@@ -30,6 +31,7 @@ body::-webkit-scrollbar-thumb {
   border-bottom: 1px solid #7d31c7;
   height: 40px;
   font-size: 1.2em;
+  background-color: #7d31c7;
 }
 .order_product {
   padding-left: 3%;
@@ -112,6 +114,7 @@ body::-webkit-scrollbar-thumb {
   align-items: flex-end;
   width: 100%;
   margin-top: 50px;
+  padding-bottom: 50px;
 }
 .bag_width_total {
   width: 300px;

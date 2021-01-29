@@ -1,18 +1,13 @@
 import "./style.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../../components/navbar";
-
-const product = {
-  name: "black hoodie special edition",
-  price: 120,
-  description:
-    "Long sleeves black denim jacket with a twisted design. Contrast stitching. Button up closure. White arrow prints on the back.",
-  stock: 2,
-};
+import { bagContext } from "../../Context";
 
 const Product = () => {
+  const { bagOrder, setBagOrder } = useContext(bagContext);
+
   const [selectValue, setSelectValue] = useState("");
   const [inputValue, setInputValue] = useState("1");
   const [pictureSelect, setPictureSelect] = useState(
@@ -30,8 +25,6 @@ const Product = () => {
     "https://cdn.yoox.biz/41/41968007sg_11_d.jpg",
     "https://cdn.yoox.biz/41/41968007sg_11_b.jpg",
   ];
-
-  const classProduct = [];
 
   const getProduct = async () => {
     let data;
@@ -55,18 +48,30 @@ const Product = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const infoProduct = {
-      quantity: selectValue,
-      size: inputValue,
-    };
-    console.log(infoProduct);
+
     selectValue === "" || selectValue === "Select Size"
       ? window.alert("Please select a size")
-      : window.alert("product add in the bag");
-    // axios.post("mettre l'url", infoProduct).then((res) => {
-    //   console.log(res.data);
-    // });
+      : isSizeisSelect();
   };
+
+  const isSizeisSelect = () => {
+    if (product) {
+      const infoProduct = {
+        id,
+        name: product.name,
+        price: product.price,
+        quantity: inputValue,
+        size: selectValue,
+      };
+      window.alert("product add in the bag");
+      setBagOrder((prevState) => {
+        console.log(prevState);
+        return [...prevState, infoProduct];
+      });
+      console.log(bagOrder);
+    }
+  };
+
   return product ? (
     <>
       <Navbar pageActive={"e-shop"} />
@@ -193,7 +198,10 @@ const Product = () => {
                   </div>
                 </div>
               </div>
-              <button className="button_submit" onClick={handleSubmit}>
+              <button
+                className="button_submit"
+                onClick={(e) => handleSubmit(e)}
+              >
                 {selectValue === "" || selectValue === "Select Size"
                   ? "CHOOSE SIZE"
                   : "ADD TO CART"}

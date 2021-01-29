@@ -229,7 +229,7 @@ const Order = () => {
               type="text"
               id="expmonth"
               name="expMonth"
-              placeholder="September"
+              placeholder="04"
               value={state.expMonth}
               onChange={handleTextChange}
             ></input>

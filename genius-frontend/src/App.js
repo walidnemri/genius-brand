@@ -9,52 +9,63 @@ import Landing from "./pages/landing";
 import Order from "./pages/order";
 import Bag from "./pages/bag";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { bagContext } from "./Context";
+import { useState, useMemo } from "react";
 
 function App() {
+  const [bagOrder, setBagOrder] = useState([]);
+
+  const value = useMemo(() => ({ bagOrder, setBagOrder }), [
+    bagOrder,
+    setBagOrder,
+  ]);
+
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
+    <bagContext.Provider value={value}>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
 
-        <Route path="/about">
-          <About />
-        </Route>
+          <Route path="/about">
+            <About />
+          </Route>
 
-        <Route path="/e-shop">
-          <Shop />
-        </Route>
+          <Route path="/e-shop">
+            <Shop />
+          </Route>
 
-        <Route path="/lookbook">
-          <Lookbook />
-        </Route>
+          <Route path="/lookbook">
+            <Lookbook />
+          </Route>
 
-        <Route path="/news">
-          <News />
-        </Route>
+          <Route path="/news">
+            <News />
+          </Route>
 
-        <Route path="/admin">
-          <Admin />
-        </Route>
+          <Route path="/admin">
+            <Admin />
+          </Route>
 
-        <Route path="/bag">
-          <Bag />
-        </Route>
+          <Route path="/bag">
+            <Bag />
+          </Route>
 
-        <Route path="/product/:id">
-          <Product />
-        </Route>
+          <Route path="/product/:id">
+            <Product />
+          </Route>
 
-        <Route path="/landing">
-          <Landing />
-        </Route>
+          <Route path="/landing">
+            <Landing />
+          </Route>
 
-        <Route path="/checkout">
-          <Order />
-        </Route>
-      </Switch>
-    </Router>
+          <Route path="/checkout">
+            <Order />
+          </Route>
+        </Switch>
+      </Router>
+    </bagContext.Provider>
   );
 }
 export default App;

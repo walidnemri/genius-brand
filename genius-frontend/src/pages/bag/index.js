@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Navbar from "../../components/navbar";
+import { bagContext } from "../../Context";
+import { useState, useEffect, useContext } from "react";
 import "./styles.css";
 
 const products = [
@@ -12,12 +14,24 @@ const products = [
     name: "genius hoodies black white",
     price: 100,
   },
+  {
+    name: "genius sweartshirt green",
+    price: 85,
+  },
+  {
+    name: "genius hoodies black",
+    price: 100,
+  },
 ];
 
 const Bag = () => {
+  const { bagOrder, setBagOrder } = useContext(bagContext);
+
   const initalState = {
-    "genius hoodies black white": 0,
-    "genius sweartshirt neon green": 0,
+    "genius hoodies black white": 1,
+    "genius sweartshirt neon green": 1,
+    "genius hoodies black": 1,
+    "genius sweartshirt green": 1,
     products,
     total: 0,
   };
@@ -76,6 +90,7 @@ const Bag = () => {
   }
   return (
     <>
+      <Navbar />
       <div className="bag_container">
         <p className="bag_title">Bag</p>
         <div className="bag_list_container">
@@ -85,7 +100,7 @@ const Bag = () => {
         </div>
 
         <ul className="bag_card_container">
-          {products.map((product) => (
+          {bagOrder.map((product, i) => (
             <li className="bag_card">
               <img
                 className="bag_card_image"
@@ -97,7 +112,10 @@ const Bag = () => {
               </div>
               <div className="bag_input_qty">
                 <div
-                  onMouseOver={() => setIsHoverLess(true)}
+                  onMouseOver={() => {
+                    console.log(product);
+                    setIsHoverLess(true);
+                  }}
                   onMouseLeave={() => setIsHoverLess(false)}
                   className="input_less_container"
                   role="button"
@@ -119,7 +137,7 @@ const Bag = () => {
                 <input
                   className="bag_card_quantity bag_card_item"
                   type="number"
-                  value={state[product.name]}
+                  value={product.quantity}
                   name={product.name}
                   min="1"
                   max="10"

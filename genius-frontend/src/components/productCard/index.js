@@ -9,7 +9,6 @@ const picture = [
 
 const ProductCard = ({ product }) => {
   const { name, price, id } = product;
-  console.log(name, price, picture);
   const [pictureChange, setPictureChange] = useState(0);
 
   return (
@@ -17,6 +16,7 @@ const ProductCard = ({ product }) => {
       <img
         className="picture-product"
         src={picture[pictureChange]}
+        alt="product_picture"
         onMouseEnter={() => setPictureChange(1)}
         onMouseLeave={() => setPictureChange(0)}
       />
