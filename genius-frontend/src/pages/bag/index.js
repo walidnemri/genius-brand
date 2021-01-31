@@ -5,89 +5,32 @@ import { bagContext } from "../../Context";
 import { useState, useEffect, useContext } from "react";
 import "./styles.css";
 
-const products = [
-  {
-    name: "genius sweartshirt neon green",
-    price: 85,
-  },
-  {
-    name: "genius hoodies black white",
-    price: 100,
-  },
-  {
-    name: "genius sweartshirt green",
-    price: 85,
-  },
-  {
-    name: "genius hoodies black",
-    price: 100,
-  },
-];
-
 const Bag = () => {
   const { bagOrder, setBagOrder } = useContext(bagContext);
 
-  const initalState = {
-    "genius hoodies black white": 1,
-    "genius sweartshirt neon green": 1,
-    "genius hoodies black": 1,
-    "genius sweartshirt green": 1,
-    products,
-    total: 0,
-  };
-
-  const [isHoverPlus, setIsHoverPlus] = React.useState(false);
-  const [isHoverLess, setIsHoverLess] = React.useState(false);
-  const [state, dispatch] = React.useReducer(reducer, initalState);
-
-  const getTotal = () => {
-    let total = 0;
-
-    state.products.forEach(
-      (product) => (total += product.price * parseInt(state[product.name]))
-    );
-    console.log(total);
-
-    dispatch({ type: "total", payload: total });
-    //return total
-  };
+  const [isHoverPlus, setIsHoverPlus] = useState(false);
+  const [isHoverLess, setIsHoverLess] = useState(false);
+  const [total, setTotal] = useState(0);
 
   React.useEffect(() => {
-    getTotal();
-  }, [state["genius hoodies black white"]]);
+    updateTotal();
+  }, [bagOrder]);
 
-  React.useEffect(() => {
-    getTotal();
-  }, [state["genius sweartshirt neon green"]]);
+  const updateTotal = () => {
+    let stackTotal = 0;
+    bagOrder.forEach((e) => {
+      stackTotal += e.price * e.quantity;
+    });
+    setTotal(stackTotal);
+  };
 
-  function reducer(state, action) {
-    switch (action.type) {
-      case "fill_input":
-        console.log(action.fieldName, action.payload);
-        console.log({ ...state, [action.fieldName]: 1 });
-        return {
-          ...state,
-          [action.fieldName]: action.payload,
-        };
-      case "less_input":
-        return {
-          ...state,
-          [action.fieldName]: action.payload.toString(),
-        };
-      case "plus_input":
-        return {
-          ...state,
-          [action.fieldName]: action.payload.toString(),
-        };
-      case "total":
-        return {
-          ...state,
-          total: action.payload,
-        };
-      default:
-        return state;
+  const updateQtyByInput = (item, product, e) => {
+    if (item.id === product.id) {
+      return (item.quantity = e.value);
     }
-  }
+    return item;
+  };
+
   return (
     <>
       <Navbar />
@@ -98,7 +41,6 @@ const Bag = () => {
           <p className="order_quantity">Quantity</p>
           <p className="order_price">Price</p>
         </div>
-
         <ul className="bag_card_container">
           {bagOrder.map((product, i) => (
             <li className="bag_card">
@@ -113,19 +55,12 @@ const Bag = () => {
               <div className="bag_input_qty">
                 <div
                   onMouseOver={() => {
-                    console.log(product);
                     setIsHoverLess(true);
                   }}
                   onMouseLeave={() => setIsHoverLess(false)}
                   className="input_less_container"
                   role="button"
-                  // onClick={(e) =>
-                  //   // dispatch({
-                  //   //   type: "less_input",
-                  //   //   fieldName: product.name,
-                  //   //   payload: parseInt(e.currentTarget.value) + 1,
-                  //   // })
-                  // }
+                  // onClick={(e) => }
                 >
                   <div
                     className="input_less"
@@ -141,27 +76,17 @@ const Bag = () => {
                   name={product.name}
                   min="1"
                   max="10"
-                  onChange={(e) =>
-                    dispatch({
-                      type: "fill_input",
-                      fieldName: e.target.name,
-                      payload: e.target.value,
-                    })
-                  }
+                  onChange={(e) => {
+                    console.log(bagOrder);
+                    console.log(e.target.value);
+                    console.log(product.quantity);
+                  }}
                 />
                 <div
                   onMouseOver={() => setIsHoverPlus(true)}
                   onMouseLeave={() => setIsHoverPlus(false)}
                   className="input_plus_container"
-                  // onClick={() =>
-                  //   setInputValue((prevValue) => {
-                  //     let parsed = parseInt(prevValue);
-                  //     if (parsed < 100) {
-                  //       parsed++;
-                  //     }
-                  //     return parsed.toString();
-                  //   })
-                  // }
+                  // onClick={(e) => }
                 >
                   <div
                     className="input_plus_bar_1"
@@ -177,7 +102,19 @@ const Bag = () => {
                   ></div>
                 </div>
               </div>
-              <button className="bag_button bag_card_item"> Remove</button>
+              <button
+                className="bag_button bag_card_item"
+                onClick={() => {
+                  setBagOrder((prevState) => {
+                    console.log(prevState);
+                    return prevState.filter(
+                      (element) => element.id !== product.id
+                    );
+                  });
+                }}
+              >
+                Remove
+              </button>
               <div className="bag_total_width">
                 <p className="bag_product_price">{product.price}$</p>
               </div>
@@ -188,7 +125,7 @@ const Bag = () => {
           <div className="bag_width_total">
             <div className="bag_total_title">
               <p>Total</p>
-              <p>{state.total}$</p>
+              <p>{total}$</p>
             </div>
             <div className="bag_checkout_btn">
               <Link to="/checkout" className="bag_link">

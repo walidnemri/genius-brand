@@ -51,10 +51,10 @@ const Product = () => {
 
     selectValue === "" || selectValue === "Select Size"
       ? window.alert("Please select a size")
-      : isSizeisSelect();
+      : isSizeIsSelect();
   };
 
-  const isSizeisSelect = () => {
+  const isSizeIsSelect = () => {
     if (product) {
       const infoProduct = {
         id,
@@ -174,7 +174,7 @@ const Product = () => {
                         onClick={() =>
                           setInputValue((prevValue) => {
                             let parsed = parseInt(prevValue);
-                            if (parsed < 100) {
+                            if (parsed < 10) {
                               parsed++;
                             }
                             return parsed.toString();
