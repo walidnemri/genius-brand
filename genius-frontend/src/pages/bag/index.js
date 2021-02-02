@@ -4,6 +4,7 @@ import Navbar from "../../components/navbar";
 import { bagContext } from "../../Context";
 import { useState, useEffect, useContext } from "react";
 import "./styles.css";
+import { parse } from "@fortawesome/fontawesome-svg-core";
 
 const Bag = () => {
   const { bagOrder, setBagOrder } = useContext(bagContext);
@@ -13,22 +14,44 @@ const Bag = () => {
   const [total, setTotal] = useState(0);
 
   React.useEffect(() => {
+    console.log(bagOrder);
     updateTotal();
   }, [bagOrder]);
 
   const updateTotal = () => {
     let stackTotal = 0;
     bagOrder.forEach((e) => {
-      stackTotal += e.price * e.quantity;
+      stackTotal += e.price * parseInt(e.quantity);
     });
-    setTotal(stackTotal);
+    setTotal(stackTotal.toString());
   };
 
-  const updateQtyByInput = (item, product, e) => {
+  const updateQtyByInput = (e, item, product) => {
     if (item.id === product.id) {
-      return (item.quantity = e.value);
+      return { ...item, quantity: e.target.value };
+    } else {
+      return item;
     }
-    return item;
+  };
+
+  const updateQtyByLess = (e, item, product) => {
+    console.log("ok");
+    if (item.id === product.id && item.quantity > 1) {
+      let parsed = parseInt(item.quantity);
+      parsed--;
+      return { ...item, quantity: parsed.toString() };
+    } else {
+      return item;
+    }
+  };
+  const updateQtyByPlus = (e, item, product) => {
+    if (item.id === product.id && item.quantity < 10) {
+      let parsed = parseInt(item.quantity);
+      parsed++;
+      return { ...item, quantity: parsed.toString() };
+    } else {
+      return item;
+    }
   };
 
   return (
@@ -60,7 +83,13 @@ const Bag = () => {
                   onMouseLeave={() => setIsHoverLess(false)}
                   className="input_less_container"
                   role="button"
-                  // onClick={(e) => }
+                  onClick={(e) => {
+                    setBagOrder(() =>
+                      bagOrder.map((item, i) =>
+                        updateQtyByLess(e, item, product)
+                      )
+                    );
+                  }}
                 >
                   <div
                     className="input_less"
@@ -77,16 +106,24 @@ const Bag = () => {
                   min="1"
                   max="10"
                   onChange={(e) => {
-                    console.log(bagOrder);
-                    console.log(e.target.value);
-                    console.log(product.quantity);
+                    setBagOrder(() =>
+                      bagOrder.map((item, i) =>
+                        updateQtyByInput(e, item, product)
+                      )
+                    );
                   }}
                 />
                 <div
                   onMouseOver={() => setIsHoverPlus(true)}
                   onMouseLeave={() => setIsHoverPlus(false)}
                   className="input_plus_container"
-                  // onClick={(e) => }
+                  onClick={(e) => {
+                    setBagOrder(() =>
+                      bagOrder.map((item, i) =>
+                        updateQtyByPlus(e, item, product)
+                      )
+                    );
+                  }}
                 >
                   <div
                     className="input_plus_bar_1"

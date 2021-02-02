@@ -6,12 +6,14 @@
   background-color: black;
   color: white;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
 }
 .order_bag_container {
   width: 40%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 .order_form_container {
   width: 60%;
@@ -19,13 +21,19 @@
   height: 100%;
   overflow: auto;
 }
-.order_form_container::-webkit-scrollbar {
+.order_form_container::-webkit-scrollbar,
+.order_container::-webkit-scrollbar,
+.order_bag_container::-webkit-scrollbar {
   width: 5px;
 }
-.order_form_container::-webkit-scrollbar-track {
+.order_form_container::-webkit-scrollbar-track,
+.order_container::-webkit-scrollbar-track,
+.order_bag_container::-webkit-scrollbar-track {
   background-color: #290f42;
 }
-.order_form_container::-webkit-scrollbar-thumb {
+.order_form_container::-webkit-scrollbar-thumb,
+.order_container::-webkit-scrollbar-thumb,
+.order_bag_container::-webkit-scrollbar-thumb {
   width: 5px;
   background-color: #7d31c7;
 }

@@ -24,7 +24,6 @@ const Order = () => {
     shippingPrice: 0,
     totalOrder: 0,
   };
-
   const [state, dispatch] = useReducer(reducer, initialState);
 
   function reducer(state, { type, field, payload }) {
@@ -47,30 +46,30 @@ const Order = () => {
     });
   };
 
-  const bag = [1, 2];
   return (
     <div className="order_container">
       <div className="order_bag_container">
         <h3>ORDER</h3>
-        {bagOrder.map((e, i) => {
+        {bagOrder.map((product, i) => {
           return (
-            <div key={i}>
-              <img alt="product_picture" src="" />
+            <div key={i} className="order_reminder_card">
+              <img
+                alt="product_picture"
+                src="https://cdn.yoox.biz/41/41968007sg_11_f.jpg"
+              />
               <div>
-                <p></p>
+                <p>{product.name}</p>
                 <div>
                   <p>Size:</p>
-                  <p>{}</p>
+                  <p>{product.size}</p>
                 </div>
               </div>
               <div>
-                <p></p>
+                <p>quantity:</p>
+                <p>{product.quantity}</p>
               </div>
               <div>
-                <p></p>
-              </div>
-              <div>
-                <p></p>
+                <p>{product.price}$</p>
               </div>
             </div>
           );
