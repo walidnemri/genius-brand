@@ -22,7 +22,7 @@
     "express-formidable": "^1.2.0",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.4.0",
+    "sequelize": "^6.5.0",
     "sequelize-cli": "^6.2.0",
     "tslib": "^2.1.0"
   },
