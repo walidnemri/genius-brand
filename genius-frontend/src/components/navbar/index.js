@@ -1,11 +1,21 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useContext } from "react";
+import { bagContext } from "../../Context";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar({ pageActive }) {
+  const { bagOrder, setBagOrder } = useContext(bagContext);
+
   const [isActive, setIsActive] = useState(true);
   const [inputValue, setInputValue] = useState("");
   const [menuIsClick, setMenuIsClick] = useState(false);
+
+  const signalBag = () => {
+    if (bagOrder.length !== 0) {
+      return <div className="navbar_signal_bag"></div>;
+    }
+  };
+
   return (
     <div
       className={menuIsClick ? "navbar_container_active" : "navbar_container"}
@@ -85,8 +95,9 @@ function Navbar({ pageActive }) {
           <ion-icon className="navbar-icon" name="person-outline"></ion-icon>
         </li>
         <li className="navbar_icon_container">
-          <Link to="/bag">
+          <Link to="/bag" className="bag_icon">
             <ion-icon className="navbar-icon" name="bag-outline"></ion-icon>
+            {signalBag()}
           </Link>
         </li>
       </ul>

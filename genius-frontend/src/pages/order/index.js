@@ -1,6 +1,5 @@
 import "./style.css";
 import { useReducer } from "react";
-import Bag from "../../components/bag_for_order";
 import { bagContext } from "../../Context";
 import { useState, useEffect, useContext } from "react";
 
@@ -15,13 +14,12 @@ const Order = () => {
     address: "",
     city: "",
     zip: "",
-    shipping: "normal",
+    shipping: "0",
     nameOnCard: "",
     creditCardNumber: "",
     expMonth: "",
     expYear: "",
     cvv: "",
-    shippingPrice: 0,
     totalOrder: 0,
   };
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -29,6 +27,16 @@ const Order = () => {
   function reducer(state, { type, field, payload }) {
     switch (type) {
       case "HANDLE INPUT TEXT":
+        return {
+          ...state,
+          [field]: payload,
+        };
+      case "SHIPPING":
+        return {
+          ...state,
+          [field]: payload,
+        };
+      case "TOTAL":
         return {
           ...state,
           [field]: payload,
@@ -46,41 +54,78 @@ const Order = () => {
     });
   };
 
+  const changeShipping = (e) => {
+    dispatch({
+      type: "SHIPPING",
+      field: "shippingPrice",
+      payload: e.target.value,
+    });
+  };
+
+  const getTotal = () => {
+    let totalStack = bagOrder.length ? 0 : state.shipping;
+
+    bagOrder.forEach(
+      (item, index) =>
+        (totalStack =
+          parseInt(item.price) * parseInt(item.quantity) +
+          parseInt(state.shipping))
+    );
+
+    console.log(totalStack);
+    dispatch({
+      type: "TOTAL",
+      field: "totalOrder",
+      payload: totalStack,
+    });
+  };
+
+  useEffect(() => {
+    getTotal();
+  }, [state.shipping]);
+
   return (
     <div className="order_container">
-      <div className="order_bag_container">
-        <h3>ORDER</h3>
-        {bagOrder.map((product, i) => {
-          return (
-            <div key={i} className="order_reminder_card">
-              <img
-                alt="product_picture"
-                src="https://cdn.yoox.biz/41/41968007sg_11_f.jpg"
-              />
-              <div>
-                <p>{product.name}</p>
-                <div>
-                  <p>Size:</p>
-                  <p>{product.size}</p>
+      <div className="order_reminder_container">
+        <div className="order_reminder_product_container">
+          <h3 className="order_title-for-reminder">ORDER</h3>
+          {bagOrder.map((product, i) => {
+            return (
+              <div key={i} className="order_reminder_card">
+                <div className="oder_reminder_img_container">
+                  <img
+                    className="order_reminder_img"
+                    alt="product_picture"
+                    src="https://cdn.yoox.biz/41/41968007sg_11_f.jpg"
+                  />
+                </div>
+                <div className="order_reminder_name-info_container">
+                  <p className="order_reminder_name">{product.name}</p>
+                  <div className="order_reminder_info-product_container">
+                    <div className="order_reminder_size_container">
+                      <p className="order_reminder_size_title">Size:</p>
+                      <p className="order_reminder_size">{product.size}</p>
+                    </div>
+                    <div className="order_reminder_qty_container">
+                      <p className="order_reminder_qty_title">quantity:</p>
+                      <p className="order_reminder_qty">{product.quantity}</p>
+                    </div>
+                    <p className="order_reminder_price">{product.price}$</p>
+                  </div>
                 </div>
               </div>
-              <div>
-                <p>quantity:</p>
-                <p>{product.quantity}</p>
-              </div>
-              <div>
-                <p>{product.price}$</p>
-              </div>
-            </div>
-          );
-        })}
-        <div>
-          <p>shipping:</p>
-          <p>{state.shippingPrice}</p>
+            );
+          })}
         </div>
-        <div>
-          <p>Total:</p>
-          <p>{state.totalOrder}</p>
+        <div className="order_reminder_total-shipping_container">
+          <div className="order_reminder_shipping_container">
+            <p className="order_reminder_shipping_title">shipping:</p>
+            <p className="order_reminder_shipping">{state.shipping}$</p>
+          </div>
+          <div className="order_reminder_total_container">
+            <p className="order_reminder_total_title">Total:</p>
+            <p className="order_reminder_total">{state.totalOrder}$</p>
+          </div>
         </div>
       </div>
       <div className="order_form_container">
@@ -162,9 +207,12 @@ const Order = () => {
                     id="normal"
                     type="radio"
                     name="shipping"
-                    value="normal"
-                    checked={state.shipping === "normal"}
-                    onChange={handleTextChange}
+                    value="0"
+                    checked={state.shipping === "0"}
+                    onChange={(e) => {
+                      handleTextChange(e);
+                      changeShipping(e);
+                    }}
                   ></input>
                   Normal (free)
                 </label>
@@ -175,9 +223,12 @@ const Order = () => {
                     id="express"
                     type="radio"
                     name="shipping"
-                    value="express"
-                    checked={state.shipping === "express"}
-                    onChange={handleTextChange}
+                    value="5"
+                    checked={state.shipping === "5"}
+                    onChange={(e) => {
+                      handleTextChange(e);
+                      changeShipping(e);
+                    }}
                   ></input>
                   Express (5$)
                 </label>
