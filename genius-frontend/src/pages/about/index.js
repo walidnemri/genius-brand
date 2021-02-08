@@ -5,12 +5,10 @@ import part1 from "./logo/part1.png";
 import part2 from "./logo/part2.png";
 import part3 from "./logo/part3.png";
 import part4 from "./logo/part4.png";
-import Fuego from "./logo/purple-fire.jpg";
 
 function About() {
   return (
     <>
-      <NavBar />
       <div className="wrapper-body">
         <h1>About</h1>
         <div className="wrapper">
@@ -46,8 +44,7 @@ function About() {
             pellentesque lorem. Pellentesque mauris velit, aliquet at risus non,
             congue eleifend risus. In vitae risus orci. Nullam a venenatis
             magna. Nullam a venenatis magna. Nullam a venenatis magna. Nullam a
-            Pellentesque mauris velit, aliquet at risus non, congue eleifend
-            Morbi maximus eleifend
+            Pellentesque mauris velit, aliquet at
           </p>
           <div className="top">
             <div className="top-left">
@@ -58,7 +55,7 @@ function About() {
                 mauris velit, aliquet at risus non, congue eleifend risus. In
                 vitae risus orci. Nullam a venenatis magna. Morbi maximus
                 eleifend quam, vitae sollicitudin massa feugiat ac. Pellentesque
-                maximus mollis nisi, non
+                maximus
               </p>
             </div>
             <div className="top-right">
@@ -69,7 +66,7 @@ function About() {
                 mauris velit, aliquet at risus non, congue eleifend risus. In
                 vitae risus orci. Nullam a venenatis magna. Morbi maximus
                 eleifend quam, vitae sollicitudin massa feugiat ac. Pellentesque
-                maximus mollis nisi, non
+                maximus
               </p>
             </div>
           </div>
@@ -82,7 +79,7 @@ function About() {
                 mauris velit, aliquet at risus non, congue eleifend risus. In
                 vitae risus orci. Nullam a venenatis magna. Morbi maximus
                 eleifend quam, vitae sollicitudin massa feugiat ac. Pellentesque
-                maximus mollis nisi, non congue eleifend risus mollis
+                morbi
               </p>
             </div>
             <div className="bottom-right">
@@ -93,7 +90,7 @@ function About() {
                 mauris velit, aliquet at risus non, congue eleifend risus. In
                 vitae risus orci. Nullam a venenatis magna. Morbi maximus
                 eleifend quam, vitae sollicitudin massa feugiat ac. Pellentesque
-                maximus mollis nisi, non congue eleifend risus mollis
+                morbi
               </p>
             </div>
           </div>
