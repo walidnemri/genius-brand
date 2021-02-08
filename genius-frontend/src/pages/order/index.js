@@ -1,10 +1,11 @@
 import "./style.css";
 import { useReducer } from "react";
-import { bagContext } from "../../Context";
+import { bagContext, totalBag } from "../../Context";
 import { useState, useEffect, useContext } from "react";
 
 const Order = () => {
   const { bagOrder, setBagOrder } = useContext(bagContext);
+  const { total, setTotal } = useContext(totalBag);
 
   const initialState = {
     firstName: "",
@@ -66,10 +67,7 @@ const Order = () => {
     let totalStack = bagOrder.length ? 0 : state.shipping;
 
     bagOrder.forEach(
-      (item, index) =>
-        (totalStack =
-          parseInt(item.price) * parseInt(item.quantity) +
-          parseInt(state.shipping))
+      (item, index) => (totalStack = parseInt(total) + parseInt(state.shipping))
     );
 
     console.log(totalStack);

@@ -1,3 +1,6 @@
 import React from "react";
 
-export const bagContext = React.createContext();
+const bagContext = React.createContext();
+const totalBag = React.createContext();
+
+export { bagContext, totalBag };

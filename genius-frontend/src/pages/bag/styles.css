@@ -32,19 +32,7 @@ body::-webkit-scrollbar-thumb {
   height: 40px;
   font-size: 1.2em;
   background-color: #7d31c7;
-}
-.order_product {
-  padding-left: 3%;
-}
-.order_quantity {
-  padding-left: 20%;
-}
-.order_price {
-  padding-right: 9%;
-}
-.bag_card_container {
-  border-bottom: 1px solid #7d31c7;
-  list-style: none;
+  width: 100%;
 }
 .bag_card {
   display: flex;
@@ -146,4 +134,26 @@ body::-webkit-scrollbar-thumb {
 }
 .bag_link {
   text-decoration: none;
+}
+.order_size {
+  margin-left: 20%;
+}
+.bag_size {
+  margin-right: 20%;
+}
+.bag-info {
+  width: 15%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.bag-info-resume {
+  display: block;
+  width: 15%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.bag_image {
+  height: 240px;
 }

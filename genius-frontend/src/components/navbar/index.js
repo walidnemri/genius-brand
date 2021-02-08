@@ -61,18 +61,6 @@ function Navbar({ pageActive }) {
         <li className="navbar_link_container">
           <Link
             className={
-              pageActive === "news"
-                ? "navbar_link_active navbar_link"
-                : "navbar_link"
-            }
-            to="/news"
-          >
-            news
-          </Link>
-        </li>
-        <li className="navbar_link_container">
-          <Link
-            className={
               pageActive === "about"
                 ? "navbar_link_active navbar_link"
                 : "navbar_link"

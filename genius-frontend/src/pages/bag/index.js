@@ -1,17 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/navbar";
-import { bagContext } from "../../Context";
+import { bagContext, totalBag } from "../../Context";
 import { useState, useEffect, useContext } from "react";
 import "./styles.css";
-import { parse } from "@fortawesome/fontawesome-svg-core";
 
 const Bag = () => {
   const { bagOrder, setBagOrder } = useContext(bagContext);
+  const { total, setTotal } = useContext(totalBag);
 
   const [isHoverPlus, setIsHoverPlus] = useState(false);
   const [isHoverLess, setIsHoverLess] = useState(false);
-  const [total, setTotal] = useState(0);
 
   React.useEffect(() => {
     console.log(bagOrder);
@@ -21,7 +20,7 @@ const Bag = () => {
   const updateTotal = () => {
     let stackTotal = 0;
     bagOrder.forEach((e) => {
-      stackTotal += e.price * parseInt(e.quantity);
+      stackTotal += parseInt(e.price) * parseInt(e.quantity);
     });
     setTotal(stackTotal.toString());
   };
@@ -60,22 +59,38 @@ const Bag = () => {
       <div className="bag_container">
         <p className="bag_title">Bag</p>
         <div className="bag_list_container">
-          <p className="order_product"> Product</p>
-          <p className="order_quantity">Quantity</p>
-          <p className="order_price">Price</p>
+          <div className="bag-info-resume"></div>
+          <div className="bag-info-resume">
+            <p className="order_product"> Product</p>
+          </div>
+          <div className="bag-info-resume">
+            <p className="order_size">Size</p>
+          </div>
+          <div className="bag-info-resume">
+            <p className="order_quantity">Quantity</p>
+          </div>
+          <div className="bag-info-resume"></div>
+          <div className="bag-info-resume">
+            <p className="order_price">Price</p>
+          </div>
         </div>
         <ul className="bag_card_container">
           {bagOrder.map((product, i) => (
             <li className="bag_card">
-              <img
-                className="bag_card_image"
-                alt="product_picture"
-                src="https://cdn.yoox.biz/41/41968007sg_11_f.jpg"
-              />
-              <div className="bag_product_name">
+              <div className="bag_image bag-info">
+                <img
+                  className="bag_card_image"
+                  alt="product_picture"
+                  src="https://cdn.yoox.biz/41/41968007sg_11_f.jpg"
+                />
+              </div>
+              <div className="bag_product_name bag-info">
                 <p className="bag_product">{product.name}</p>
               </div>
-              <div className="bag_input_qty">
+              <div className="bag_size bag-info">
+                <p>{product.size}</p>
+              </div>
+              <div className="bag_input_qty bag-info">
                 <div
                   onMouseOver={() => {
                     setIsHoverLess(true);
@@ -140,7 +155,7 @@ const Bag = () => {
                 </div>
               </div>
               <button
-                className="bag_button bag_card_item"
+                className="bag_button bag_card_item bag-info"
                 onClick={() => {
                   setBagOrder((prevState) => {
                     console.log(prevState);
@@ -152,7 +167,7 @@ const Bag = () => {
               >
                 Remove
               </button>
-              <div className="bag_total_width">
+              <div className="bag_total_width bag-info">
                 <p className="bag_product_price">{product.price}$</p>
               </div>
             </li>
