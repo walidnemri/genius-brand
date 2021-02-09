@@ -71,7 +71,6 @@ const Order = () => {
       (item, index) => (totalStack = parseInt(total) + parseInt(state.shipping))
     );
 
-    console.log(totalStack);
     dispatch({
       type: "TOTAL",
       field: "totalOrder",
@@ -81,7 +80,7 @@ const Order = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("onSubmit");
+
     emailjs
       .sendForm(
         "service_soxrgsz",
