@@ -2,6 +2,7 @@ import "./style.css";
 import { useReducer } from "react";
 import { bagContext, totalBag } from "../../Context";
 import { useState, useEffect, useContext } from "react";
+import emailjs from "emailjs-com";
 
 const Order = () => {
   const { bagOrder, setBagOrder } = useContext(bagContext);
@@ -78,6 +79,26 @@ const Order = () => {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("onSubmit");
+    emailjs
+      .sendForm(
+        "service_soxrgsz",
+        "template_8jdo8mq",
+        e.target,
+        "user_DszOb9eEmlkIXO0yKpNNp"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   useEffect(() => {
     getTotal();
   }, [state.shipping]);
@@ -127,7 +148,7 @@ const Order = () => {
         </div>
       </div>
       <div className="order_form_container">
-        <form className="order_form">
+        <form className="order_form" onSubmit={handleSubmit}>
           <div className="order_address">
             <h3>Delivery Address</h3>
             <label htmlFor="firstName">First Name:</label>
@@ -303,6 +324,9 @@ const Order = () => {
               value={state.cvv}
               onChange={handleTextChange}
             ></input>
+            <button className="order_submit" type="submit">
+              Submit
+            </button>
           </div>
         </form>
       </div>

@@ -47,13 +47,11 @@ body::-webkit-scrollbar-thumb {
 .bag_product_name {
   width: 20%;
   font-size: 1.2em;
-  margin-right: 4%;
 }
 .bag_input_qty {
   display: flex;
   height: 30px;
   align-items: center;
-  padding-right: 5%;
 }
 .bag_card_quantity {
   border: none;
@@ -91,7 +89,6 @@ body::-webkit-scrollbar-thumb {
 }
 .bag_product_price {
   font-size: 1.2em;
-  padding-right: 10%;
 }
 .bag_total_width {
   width: 10%;
@@ -135,17 +132,13 @@ body::-webkit-scrollbar-thumb {
 .bag_link {
   text-decoration: none;
 }
-.order_size {
-  margin-left: 20%;
-}
-.bag_size {
-  margin-right: 20%;
-}
 .bag-info {
   width: 15%;
   margin: 0;
   padding: 0;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .bag-info-resume {
   display: block;

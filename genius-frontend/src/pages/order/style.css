@@ -276,3 +276,15 @@ input:checked {
 .credit_card_container {
   padding-bottom: 20px;
 }
+.order_submit {
+  background-color: black;
+  border: 1px solid #7d31c7;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  width: 100%;
+  font-size: 1.3em;
+  margin-top: 5%;
+}
+.order_submit:hover {
+  background-color: #7d31c7;
+}

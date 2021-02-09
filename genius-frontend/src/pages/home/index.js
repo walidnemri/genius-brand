@@ -11,7 +11,7 @@ const Home = () => {
   const [hover, setHover] = useState(false);
   const [changeBckg, setChangeBckg] = useState("default");
 
-  const nav = ["e-shop", "lookbook", "news", "about"];
+  const nav = ["e-shop", "lookbook", "about"];
 
   const animeBckg = (hover, bckgImage) => {
     if (hover) {
@@ -29,13 +29,6 @@ const Home = () => {
           return {
             filter: "url(#hover_filter)",
             backgroundImage: `url(${home2})`,
-            transition: "background-image 1s cubic-bezier(0.65, 0, 0.35, 1)",
-          };
-        case "news":
-          console.log("new");
-          return {
-            filter: "url(#hover_filter)",
-            backgroundImage: `url(${home3})`,
             transition: "background-image 1s cubic-bezier(0.65, 0, 0.35, 1)",
           };
         case "about":
