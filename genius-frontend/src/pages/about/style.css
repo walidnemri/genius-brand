@@ -7,6 +7,10 @@
   margin-right: auto;
   background: #212121;
 }
+.background {
+  background: #212121;
+  height: auto;
+}
 
 .wrapper-body p {
   color: white;

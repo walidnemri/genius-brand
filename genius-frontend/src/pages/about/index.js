@@ -10,7 +10,7 @@ function About() {
   return (
     <>
       <Navbar />
-      <div>
+      <div class="background">
         <div className="wrapper-body">
           <h1>About</h1>
           <div className="wrapper">
@@ -57,8 +57,7 @@ function About() {
                   at nunc imperdiet, rhoncus diam a, pellentesque lorem.
                   Pellentesque mauris velit, aliquet at risus non, congue
                   eleifend risus. In vitae risus orci. Nullam a venenatis magna.
-                  Morbi maximus eleifend quam, vitae sollicitudin massa feugiat
-                  ac. Pellentesque maximus
+                  Morbi maximus eleifend quam,
                 </p>
               </div>
               <div className="top-right">
@@ -68,8 +67,7 @@ function About() {
                   at nunc imperdiet, rhoncus diam a, pellentesque lorem.
                   Pellentesque mauris velit, aliquet at risus non, congue
                   eleifend risus. In vitae risus orci. Nullam a venenatis magna.
-                  Morbi maximus eleifend quam, vitae sollicitudin massa feugiat
-                  ac. Pellentesque maximus
+                  Morbi maximus eleifend quam,
                 </p>
               </div>
             </div>
