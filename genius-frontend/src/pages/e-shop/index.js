@@ -6,10 +6,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Eshop = () => {
-  const [filter, setFilter] = useState();
-  const [isSelect, setIsSelect] = useState();
-  const [isClick, setIsClick] = useState(false);
   const [products, setProducts] = useState();
+  const [categoryArray, setCategoryArray] = useState();
 
   const getProducts = async () => {
     let data;
@@ -21,9 +19,31 @@ const Eshop = () => {
     if (data) setProducts(data.data.product);
   };
 
+  const getCategory = async () => {
+    let data;
+    try {
+      data = await axios.get("http://localhost:3002/api/categories");
+    } catch (err) {
+      console.log(err);
+    }
+    if (data) setCategoryArray(data.data.category);
+  };
+
+  const displayProduct = () => {
+    if (products && categoryArray) {
+      return products.map((e, i) => (
+        <Card key={i} product={e} categoryArray={categoryArray} />
+      ));
+    }
+  };
+
   useEffect(() => {
     getProducts();
   }, []);
+  useEffect(() => {
+    getCategory();
+  }, []);
+
   return (
     <div>
       <Banner style={{ position: "fixed" }} />
@@ -90,12 +110,7 @@ const Eshop = () => {
             </li>
           </ul>
         </div>
-        <div className="product-container">
-          {products &&
-            products.map((e, i) => {
-              return <Card key={i} product={e} />;
-            })}
-        </div>
+        <div className="product-container">{displayProduct()}</div>
       </div>
     </div>
   );

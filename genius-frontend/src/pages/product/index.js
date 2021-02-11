@@ -5,6 +5,22 @@ import axios from "axios";
 import Navbar from "../../components/navbar";
 import { bagContext } from "../../Context";
 
+const picture = {
+  "t-shirt": [
+    "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+    "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    "https://cdn.yoox.biz/41/41968007sg_11_e.jpg",
+    "https://cdn.yoox.biz/41/41968007sg_11_d.jpg",
+    "https://cdn.yoox.biz/41/41968007sg_11_b.jpg",
+  ],
+  hoodies: [
+    "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
+    "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+  ],
+  bottom: [],
+  sweatshirts: [],
+};
+
 const Product = () => {
   const { bagOrder, setBagOrder } = useContext(bagContext);
 
@@ -16,6 +32,7 @@ const Product = () => {
   const [isHoverLess, setIsHoverLess] = useState(false);
   const [isHoverPlus, setIsHoverPlus] = useState(false);
   const [product, setProduct] = useState();
+  const [category, setCategory] = useState();
   const { id } = useParams();
 
   const pictureProduct = [
@@ -27,13 +44,20 @@ const Product = () => {
   ];
 
   const getProduct = async () => {
-    let data;
+    let dataProduct;
+    let dataCategory;
     try {
-      data = await axios.get(`http://localhost:3002/api/products/${id}`);
+      dataProduct = await axios.get(`http://localhost:3002/api/products/${id}`);
+      dataCategory = await axios.get(
+        `http://localhost:3002/api/categories/${dataProduct.data.product.category_id}`
+      );
     } catch (err) {
       console.log(err);
     }
-    if (data) setProduct(data.data.product);
+    if (dataProduct && dataCategory) {
+      setProduct(dataProduct.data.product);
+      setCategory(dataCategory.data.category.name);
+    }
   };
 
   useEffect(() => {
