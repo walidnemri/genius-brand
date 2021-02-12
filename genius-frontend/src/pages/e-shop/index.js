@@ -39,8 +39,6 @@ const Eshop = () => {
 
   useEffect(() => {
     getProducts();
-  }, []);
-  useEffect(() => {
     getCategory();
   }, []);
 

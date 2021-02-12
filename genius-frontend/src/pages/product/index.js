@@ -7,18 +7,26 @@ import { bagContext } from "../../Context";
 
 const picture = {
   "t-shirt": [
-    "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
-    "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
-    "https://cdn.yoox.biz/41/41968007sg_11_e.jpg",
-    "https://cdn.yoox.biz/41/41968007sg_11_d.jpg",
-    "https://cdn.yoox.biz/41/41968007sg_11_b.jpg",
+    "https://cdn.yoox.biz/12/12529757sa_13_f.jpg",
+    "https://cdn.yoox.biz/12/12529757sa_13_r.jpg",
+    "https://cdn.yoox.biz/12/12529757sa_13_d.jpg",
   ],
   hoodies: [
-    "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
-    "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
+    "https://cdn.yoox.biz/14/14063120qv_13_f.jpg",
+    "https://cdn.yoox.biz/14/14063120qv_13_r.jpg",
+    "https://cdn.yoox.biz/14/14063120qv_13_a.jpg",
   ],
-  bottom: [],
-  sweatshirts: [],
+  bottom: [
+    "https://cdn.yoox.biz/13/13537145tn_13_f.jpg",
+    "https://cdn.yoox.biz/13/13537145tn_13_r.jpg",
+    "https://cdn.yoox.biz/13/13537145tn_13_d.jpg",
+    "https://cdn.yoox.biz/13/13537145tn_13_a.jpg",
+  ],
+  sweatshirts: [
+    "https://cdn.yoox.biz/14/14068435kb_13_f.jpg",
+    "https://cdn.yoox.biz/14/14068435kb_13_r.jpg",
+    "https://cdn.yoox.biz/14/14068435kb_13_d.jpg",
+  ],
 };
 
 const Product = () => {
@@ -26,22 +34,13 @@ const Product = () => {
 
   const [selectValue, setSelectValue] = useState("");
   const [inputValue, setInputValue] = useState("1");
-  const [pictureSelect, setPictureSelect] = useState(
-    "https://cdn.yoox.biz/41/41968007sg_11_f.jpg"
-  );
+  const [pictureSelect, setPictureSelect] = useState("");
   const [isHoverLess, setIsHoverLess] = useState(false);
   const [isHoverPlus, setIsHoverPlus] = useState(false);
   const [product, setProduct] = useState();
   const [category, setCategory] = useState();
+  const [pictureArray, setPictureArray] = useState();
   const { id } = useParams();
-
-  const pictureProduct = [
-    "https://cdn.yoox.biz/41/41968007sg_11_f.jpg",
-    "https://cdn.yoox.biz/41/41968007sg_11_r.jpg",
-    "https://cdn.yoox.biz/41/41968007sg_11_e.jpg",
-    "https://cdn.yoox.biz/41/41968007sg_11_d.jpg",
-    "https://cdn.yoox.biz/41/41968007sg_11_b.jpg",
-  ];
 
   const getProduct = async () => {
     let dataProduct;
@@ -55,14 +54,32 @@ const Product = () => {
       console.log(err);
     }
     if (dataProduct && dataCategory) {
+      console.log(dataProduct.data.product, dataCategory.data.category.name);
       setProduct(dataProduct.data.product);
       setCategory(dataCategory.data.category.name);
+    }
+  };
+
+  const sortPicture = (category) => {
+    setPictureArray(picture[category]);
+    if (category === "t-shirt") {
+      setPictureSelect("https://cdn.yoox.biz/12/12529757sa_13_f.jpg");
+    } else if (category === "hoodies") {
+      setPictureSelect("https://cdn.yoox.biz/14/14063120qv_13_f.jpg");
+    } else if (category === "bottom") {
+      setPictureSelect("https://cdn.yoox.biz/");
+    } else if (category === "sweatshirts") {
+      setPictureSelect("https://");
     }
   };
 
   useEffect(() => {
     getProduct();
   }, []);
+
+  useEffect(() => {
+    sortPicture(category);
+  }, [category]);
 
   const handleChangeSelectValue = (e) => {
     setSelectValue(e.target.value);
@@ -86,6 +103,7 @@ const Product = () => {
         price: product.price,
         quantity: inputValue,
         size: selectValue,
+        category_id: product.category_id,
       };
       window.alert("product add in the bag");
       setBagOrder((prevState) => {
@@ -96,7 +114,7 @@ const Product = () => {
     }
   };
 
-  return product ? (
+  return pictureArray && product ? (
     <>
       <Navbar pageActive={"e-shop"} />
       <div className="product">
@@ -106,7 +124,7 @@ const Product = () => {
             style={{ backgroundImage: `url(${pictureSelect})` }}
           ></div>
           <ul className="picture_selection">
-            {pictureProduct.map((e, i) => (
+            {pictureArray.map((e, i) => (
               <li
                 className={
                   pictureSelect === e

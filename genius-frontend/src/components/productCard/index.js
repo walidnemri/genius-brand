@@ -4,14 +4,17 @@ import "./style.css";
 
 const picture = {
   "t-shirt": [
-    "https://cdn.yoox.biz/12/12471306bg_13_f.jpg",
-    "https://cdn.yoox.biz/12/12471306bg_13_r.jpg",
+    "https://cdn.yoox.biz/12/12529757sa_13_f.jpg",
+    "https://cdn.yoox.biz/12/12529757sa_13_r.jpg",
   ],
   hoodies: [
     "https://cdn.yoox.biz/14/14063120qv_13_f.jpg",
     "https://cdn.yoox.biz/14/14063120qv_13_r.jpg",
   ],
-  bottom: [],
+  bottom: [
+    "https://cdn.yoox.biz/13/13537145tn_13_f.jpg",
+    "https://cdn.yoox.biz/13/13537145tn_13_r.jpg",
+  ],
   sweatshirts: [
     "https://cdn.yoox.biz/14/14068435kb_13_f.jpg",
     "https://cdn.yoox.biz/14/14068435kb_13_r.jpg",
@@ -21,9 +24,10 @@ const picture = {
 const ProductCard = ({ product, categoryArray }) => {
   const { name, price, id, category_id } = product;
   const [pictureChange, setPictureChange] = useState(0);
-  const [pictureArray, setPictureArray] = useState([]);
+  const [pictureArray, setPictureArray] = useState();
 
   const sortPicture = (categoryId) => {
+    console.log(categoryArray);
     categoryArray.forEach((cate) => {
       if (cate.id === categoryId) {
         setPictureArray(picture[cate.name]);
@@ -35,7 +39,7 @@ const ProductCard = ({ product, categoryArray }) => {
     sortPicture(category_id);
   }, []);
 
-  return (
+  return pictureArray ? (
     <Link to={`./product/${id}`} className="product-card-container">
       <img
         className="picture-product"
@@ -49,6 +53,8 @@ const ProductCard = ({ product, categoryArray }) => {
         <p className="price"> {price + "€"}</p>
       </div>
     </Link>
+  ) : (
+    <p>nothing</p>
   );
 };
 

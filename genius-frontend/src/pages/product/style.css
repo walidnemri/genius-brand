@@ -30,7 +30,7 @@
   width: 10%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin: 0 3em;
 }
 .picture_selection_unique {
@@ -43,6 +43,7 @@
   margin: 10px;
   position: relative;
   list-style: none;
+  margin: 50% 0 50% 0;
 }
 .picture_selection_unique_hover::before {
   content: "";
